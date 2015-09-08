@@ -19,6 +19,8 @@ namespace NerdSince1984.Syndication.Atom
     /// <param name="term">A <see cref="string"/> representing the term.</param>
     /// <param name="label">A <see cref="string"/> representing the label.</param>
     /// <param name="scheme">A <see cref="string"/> representing the scheme.</param>
+    /// <exception cref="ArgumentNullException"><paramref name="term"/> is null.</exception>
+    /// <exception cref="ArgumentException"><paramref name="term"/> is an empty <see cref="string"/>.</exception>
     public AtomCategory(string term, string label, string scheme)
     {
       if(term == null) throw new ArgumentNullException("term");
@@ -33,7 +35,7 @@ namespace NerdSince1984.Syndication.Atom
     protected AtomCategory(XElement element) : base(element) { }
 
     /// <summary>Gets or sets the term of the category.</summary>
-    /// <returns>A <see cref="string"/> representing the term of the category.</returns>
+    /// <value>A <see cref="string"/> representing the term of the category.</value>
     /// <exception cref="ArgumentNullException"><paramref name="value"/> is null.</exception>
     /// <exception cref="ArgumentException"><paramref name="value"/> is an empty <see cref="string"/>.</exception>
     public string Term
@@ -49,7 +51,7 @@ namespace NerdSince1984.Syndication.Atom
     }
 
     /// <summary>Gets or sets the label of the category.</summary>
-    /// <returns>A <see cref="string"/> representing the label of the category.</returns>
+    /// <value>A <see cref="string"/> representing the label of the category.</value>
     public string Label
     {
       get { return (string)this.Element.Attribute("label"); }
@@ -57,15 +59,15 @@ namespace NerdSince1984.Syndication.Atom
     }
 
     /// <summary>Gets or sets the scheme of the category.</summary>
-    /// <returns>A <see cref="string"/> representing the scheme of the category.</returns>
+    /// <value>A <see cref="string"/> representing the scheme of the category.</value>
     public string Scheme
     {
       get { return (string)this.Element.Attribute("scheme"); }
       set { this.Element.SetAttributeValue("scheme", value); }
     }
 
-    /// <summary>Gets an <see cref="XName"/> representing the name of the underlying element.</summary>
-    /// <returns>An <see cref="XName"/> representing the name of the underlying element. For <see cref="AtomCategory"/>, this value is <see cref="AtomFeed.AtomNamespace"/> + "category".</returns>
+    /// <summary>Gets the name of the underlying element.</summary>
+    /// <value>An <see cref="XName"/> representing the name of the underlying element. For <see cref="AtomCategory"/>, this value is <see cref="AtomFeed.AtomNamespace"/> + "category".</value>
     protected override XName ElementName
     {
       get { return AtomNamespace + "category"; }

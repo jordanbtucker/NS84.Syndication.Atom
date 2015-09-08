@@ -21,15 +21,15 @@ namespace NerdSince1984.Syndication.Atom
     protected AtomContent(XElement element) : base(element) { }
 
     /// <summary>Gets or sets the type of this content.</summary>
-    /// <returns>A <see cref="string"/> representing the type of this content.</returns>
+    /// <value>A <see cref="string"/> representing the type of this content.</value>
     public virtual string Type
     {
       get { return (string)this.Element.Attribute("type"); }
       set { this.Element.SetAttributeValue("type", value); }
     }
 
-    /// <summary>Gets an <see cref="XName"/> representing the name of the underlying element.</summary>
-    /// <returns>An <see cref="XName"/> representing the name of the underlying element. For <see cref="AtomContent"/>, this value is <see cref="AtomFeed.AtomNamespace"/> + "content".</returns>
+    /// <summary>Gets the name of the underlying element.</summary>
+    /// <value>An <see cref="XName"/> representing the name of the underlying element. For <see cref="AtomContent"/>, this value is <see cref="AtomFeed.AtomNamespace"/> + "content".</value>
     protected override XName ElementName
     {
       get { return AtomNamespace + "content"; }

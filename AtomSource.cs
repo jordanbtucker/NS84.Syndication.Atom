@@ -20,40 +20,40 @@ namespace NerdSince1984.Syndication.Atom
     /// <param name="element">An <see cref="XElement"/> to create the source from.</param>
     protected AtomSource(XElement element) : base(element) { }
 
-    /// <summary>Gets an <see cref="AtomGenerator"/> representing information about the generator of this source.</summary>
-    /// <returns>An <see cref="AtomGenerator"/> representing information about the generator of this source.</returns>
+    /// <summary>Gets the generator of this source.</summary>
+    /// <value>An <see cref="AtomGenerator"/> representing information about the generator of this source.</value>
     public virtual AtomGenerator Generator
     {
       get { return this.Element.Element(AtomNamespace + "generator"); }
       protected set { this.SetSingleElement(AtomNamespace + "generator", value); }
     }
 
-    /// <summary>Gets or sets an <see cref="AtomIcon"/> representing the icon of this source.</summary>
-    /// <returns>An <see cref="AtomIcon"/> representing the icon of this source.</returns>
+    /// <summary>Gets or sets the icon of this source.</summary>
+    /// <value>An <see cref="AtomIcon"/> representing the icon of this source.</value>
     public virtual AtomIcon Icon
     {
       get { return this.Element.Element(AtomNamespace + "icon"); }
       set { this.SetSingleElement(AtomNamespace + "icon", value); }
     }
 
-    /// <summary>Gets or sets an <see cref="AtomLogo"/> representing the logo of this source.</summary>
-    /// <returns>An <see cref="AtomLogo"/> representing the logo of this source.</returns>
+    /// <summary>Gets or sets the logo of this source.</summary>
+    /// <value>An <see cref="AtomLogo"/> representing the logo of this source.</value>
     public virtual AtomLogo Logo
     {
       get { return this.Element.Element(AtomNamespace + "logo"); }
       set { this.SetSingleElement(AtomNamespace + "logo", value); }
     }
 
-    /// <summary>Gets or sets an <see cref="AtomSubtitle"/> representing the subtitle of this source.</summary>
-    /// <returns>An <see cref="AtomSubtitle"/> representing the subtitle of this source.</returns>
+    /// <summary>Gets or sets the subtitle of this source.</summary>
+    /// <value>An <see cref="AtomSubtitle"/> representing the subtitle of this source.</value>
     public virtual AtomSubtitle Subtitle
     {
       get { return this.Element.Element(AtomNamespace + "subtitle"); }
       set { this.SetSingleElement(AtomNamespace + "subtitle", value); }
     }
 
-    /// <summary>Gets an <see cref="XName"/> representing the name of the underlying element.</summary>
-    /// <returns>An <see cref="XName"/> representing the name of the underlying element. For <see cref="AtomSource"/>, this value is <see cref="AtomFeed.AtomNamespace"/> + "source".</returns>
+    /// <summary>Gets the name of the underlying element.</summary>
+    /// <value>An <see cref="XName"/> representing the name of the underlying element. For <see cref="AtomSource"/>, this value is <see cref="AtomFeed.AtomNamespace"/> + "source".</value>
     protected override XName ElementName
     {
       get { return AtomNamespace + "source"; }

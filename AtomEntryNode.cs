@@ -28,61 +28,61 @@ namespace NerdSince1984.Syndication.Atom
     /// <param name="element">An <see cref="XElement"/> to create the entry from.</param>
     protected AtomEntryNode(XElement element) : base(element) { }
 
-    /// <summary>Gets or sets an <see cref="AtomId"/> representing the ID of this entry.</summary>
-    /// <returns>An <see cref="AtomId"/> representing the ID of this entry.</returns>
+    /// <summary>Gets or sets the ID of this entry.</summary>
+    /// <value>An <see cref="AtomId"/> representing the ID of this entry.</value>
     public virtual AtomId Id
     {
       get { return this.Element.Element(AtomNamespace + "id"); }
       set { this.SetSingleElement(AtomNamespace + "id", value); }
     }
 
-    /// <summary>Gets or sets an <see cref="AtomTitle"/> representing the title of this entry.</summary>
-    /// <returns>An <see cref="AtomTitle"/> representing the title of this entry.</returns>
+    /// <summary>Gets or sets the title of this entry.</summary>
+    /// <value>An <see cref="AtomTitle"/> representing the title of this entry.</value>
     public virtual AtomTitle Title
     {
       get { return this.Element.Element(AtomNamespace + "title"); }
       set { this.SetSingleElement(AtomNamespace + "title", value); }
     }
 
-    /// <summary>Gets or sets an <see cref="AtomUpdated"/> representing the date and time when this entry was last updated.</summary>
-    /// <returns>An <see cref="AtomUpdated"/> representing the date and time when this entry was last updated.</returns>
+    /// <summary>Gets or sets the date and time when this entry was last updated.</summary>
+    /// <value>An <see cref="AtomUpdated"/> representing the date and time when this entry was last updated.</value>
     public virtual AtomUpdated Updated
     {
       get { return this.Element.Element(AtomNamespace + "updated"); }
       set { this.SetSingleElement(AtomNamespace + "updated", value); }
     }
 
-    /// <summary>Gets or sets an <see cref="AtomRights"/> representing copyright information about this entry.</summary>
-    /// <returns>An <see cref="AtomRights"/> representing copyright information about this entry.</returns>
+    /// <summary>Gets or sets copyright information about this entry.</summary>
+    /// <value>An <see cref="AtomRights"/> representing copyright information about this entry.</value>
     public AtomRights Rights
     {
       get { return this.Element.Element(AtomNamespace + "rights"); }
       set { this.SetSingleElement(AtomNamespace + "rights", value); }
     }
 
-    /// <summary>Gets an <see cref="IEnumerable&lt;T&gt;"/> of <see cref="AtomAuthor"/> representing the authors of this entry.</summary>
-    /// <returns>An <see cref="IEnumerable&lt;T&gt;"/> of <see cref="AtomAuthor"/> representing the authors of this entry.</returns>
+    /// <summary>Gets the authors of this entry.</summary>
+    /// <value>An <see cref="IEnumerable{T}"/> of <see cref="AtomAuthor"/> representing the authors of this entry.</value>
     public IEnumerable<AtomAuthor> Authors
     {
       get { return this.Element.Elements(AtomNamespace + "author").Select(e => (AtomAuthor)e); }
     }
 
-    /// <summary>Gets an <see cref="IEnumerable&lt;T&gt;"/> of <see cref="AtomCategory"/> representing the categories of this entry.</summary>
-    /// <returns>An <see cref="IEnumerable&lt;T&gt;"/> of <see cref="AtomCategory"/> representing the categories of this entry.</returns>
+    /// <summary>Gets the categories of this entry.</summary>
+    /// <value>An <see cref="IEnumerable{T}"/> of <see cref="AtomCategory"/> representing the categories of this entry.</value>
     public IEnumerable<AtomCategory> Categories
     {
       get { return this.Element.Elements(AtomNamespace + "category").Select(e => (AtomCategory)e); }
     }
 
-    /// <summary>Gets an <see cref="IEnumerable&lt;T&gt;"/> of <see cref="AtomContributor"/> representing the contributors of this entry.</summary>
-    /// <returns>An <see cref="IEnumerable&lt;T&gt;"/> of <see cref="AtomContributor"/> representing the contributors of this entry.</returns>
+    /// <summary>Gets the contributors of this entry.</summary>
+    /// <value>An <see cref="IEnumerable{T}"/> of <see cref="AtomContributor"/> representing the contributors of this entry.</value>
     public IEnumerable<AtomContributor> Contributors
     {
       get { return this.Element.Elements(AtomNamespace + "contributor").Select(e => (AtomContributor)e); }
     }
 
-    /// <summary>Gets an <see cref="IEnumerable&lt;T&gt;"/> of <see cref="AtomLink"/> representing the links in this entry.</summary>
-    /// <returns>An <see cref="IEnumerable&lt;T&gt;"/> of <see cref="AtomLink"/> representing the links in this entry.</returns>
+    /// <summary>Gets the links in this entry.</summary>
+    /// <value>An <see cref="IEnumerable{T}"/> of <see cref="AtomLink"/> representing the links in this entry.</value>
     public IEnumerable<AtomLink> Links
     {
       get { return this.Element.Elements(AtomNamespace + "link").Select(e => (AtomLink)e); }

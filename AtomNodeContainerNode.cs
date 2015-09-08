@@ -35,6 +35,7 @@ namespace NerdSince1984.Syndication.Atom
 
     /// <summary>Adds the specified <see cref="AtomNode"/> to this node.</summary>
     /// <param name="node">The <see cref="AtomNode"/> to add.</param>
+    /// <exception cref="ArgumentNullException"><paramref name="node"/> is null.</exception>
     /// <exception cref="ArgumentException"><paramref name="node"/> cannot be added.</exception>
     public void Add(AtomNode node)
     {
@@ -45,6 +46,7 @@ namespace NerdSince1984.Syndication.Atom
 
     /// <summary>Removes the specified <see cref="AtomNode"/> from this node.</summary>
     /// <param name="node">The <see cref="AtomNode"/> to remove.</param>
+    /// <exception cref="ArgumentNullException"><paramref name="node"/> is null.</exception>
     /// <exception cref="ArgumentException"><paramref name="node"/> cannot be removed.</exception>
     public void Remove(AtomNode node)
     {

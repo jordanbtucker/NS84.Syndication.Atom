@@ -17,8 +17,8 @@ namespace NerdSince1984.Syndication.Atom
     /// <param name="element">An <see cref="XElement"/> to create the node from.</param>
     protected AtomUriNode(XElement element) : base(element) { }
 
-    /// <summary>Gets or sets a <see cref="string"/> representing the URI of this node.</summary>
-    /// <returns>A <see cref="string"/> representing the URI of this node.</returns>
+    /// <summary>Gets or sets the URI of this node.</summary>
+    /// <value>A <see cref="string"/> representing the URI of this node.</value>
     /// <exception cref="ArgumentNullException"><paramref name="value"/> is null.</exception>
     /// <exception cref="ArgumentException"><paramref name="value"/> is an empty <see cref="string"/>.</exception>
     public string Uri

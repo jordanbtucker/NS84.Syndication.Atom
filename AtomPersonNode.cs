@@ -35,7 +35,7 @@ namespace NerdSince1984.Syndication.Atom
     protected AtomPersonNode(XElement element) : base(element) { }
 
     /// <summary>Gets or sets the name of the person.</summary>
-    /// <returns>A <see cref="string"/> representing the name of the person.</returns>
+    /// <value>A <see cref="string"/> representing the name of the person.</value>
     /// <exception cref="ArgumentNullException"><paramref name="value"/> is null.</exception>
     /// <exception cref="ArgumentException"><paramref name="value"/> is an empty <see cref="string"/>.</exception>
     public string Name
@@ -51,7 +51,7 @@ namespace NerdSince1984.Syndication.Atom
     }
 
     /// <summary>Gets or sets the email address of the person.</summary>
-    /// <returns>A <see cref="string"/> representing the email address of the person.</returns>
+    /// <value>A <see cref="string"/> representing the email address of the person.</value>
     public string Email
     {
       get { return (string)this.Element.Element(AtomNamespace + "email"); }
@@ -59,7 +59,7 @@ namespace NerdSince1984.Syndication.Atom
     }
 
     /// <summary>Gets or sets the URI of the person.</summary>
-    /// <returns>A <see cref="string"/> representing the URI of the person.</returns>
+    /// <value>A <see cref="string"/> representing the URI of the person.</value>
     public string Uri
     {
       get { return (string)this.Element.Element(AtomNamespace + "uri"); }

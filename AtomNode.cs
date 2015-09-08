@@ -31,51 +31,51 @@ namespace NerdSince1984.Syndication.Atom
       this.element = element;
     }
 
-    /// <summary>Gets an <see cref="XElement"/> representing the underlying element of this node.</summary>
-    /// <returns>An <see cref="XElement"/> representing the underlying element of this node.</returns>
+    /// <summary>Gets the underlying element of this node.</summary>
+    /// <value>An <see cref="XElement"/> representing the underlying element of this node.</value>
     protected XElement Element
     {
       get { return this.element; }
     }
 
-    /// <summary>When overridden in a derived class, gets an <see cref="XName"/> representing the name of the underlying element.</summary>
-    /// <returns>An <see cref="XName"/> representing the name of the underlying element.</returns>
+    /// <summary>When overridden in a derived class, gets the name of the underlying element.</summary>
+    /// <value>An <see cref="XName"/> representing the name of the underlying element.</value>
     protected abstract XName ElementName { get; }
 
-    /// <summary>Gets a <see cref="string"/> representing the base URI of this node.</summary>
-    /// <returns>A <see cref="string"/> representing the base URI of this node.</returns>
+    /// <summary>Gets the base URI of this node.</summary>
+    /// <value>A <see cref="string"/> representing the base URI of this node.</value>
     public string BaseUri
     {
       get { return (string)this.Element.Attribute(XNamespace.Xml + "base"); }
       set { this.Element.SetAttributeValue(XNamespace.Xml + "base", value); }
     }
 
-    /// <summary>Gets a <see cref="string"/> representing the language of this node.</summary>
-    /// <returns>A <see cref="string"/> representing the language of this node.</returns>
+    /// <summary>Gets the language of this node.</summary>
+    /// <value>A <see cref="string"/> representing the language of this node.</value>
     public string Language
     {
       get { return (string)this.Element.Attribute(XNamespace.Xml + "lang"); }
       set { this.Element.SetAttributeValue(XNamespace.Xml + "lang", value); }
     }
 
-    /// <summary>Returns an <see cref="XAttribute"/> representing the first extension attribute with the specified <see cref="XName"/>.</summary>
+    /// <summary>Returns the first extension attribute with the specified <see cref="XName"/>.</summary>
     /// <param name="name">An <see cref="XName"/> representing the name of the extension attribute.</param>
-    /// <returns>An <see cref="XAttribute"/> representing the first extension attribute with the specified <see cref="XName"/>.</returns>
+    /// <returns>An <see cref="XAttribute"/> representing the first extension attribute with the specified <see cref="XName"/> if any exist; otherwise, null.</returns>
     public XAttribute ExtAttribute(XName name)
     {
       return this.ExtAttributes().FirstOrDefault(a => a.Name == name);
     }
 
-    /// <summary>Returns an <see cref="IEnumerable&lt;T&gt;"/> of <see cref="XAttribute"/> representing the extension attributes of this node.</summary>
-    /// <returns>An <see cref="IEnumerable&lt;T&gt;"/> of <see cref="XAttribute"/> representing the extension attributes of this node.</returns>
+    /// <summary>Returns the extension attributes of this node.</summary>
+    /// <returns>An <see cref="IEnumerable{T}"/> of <see cref="XAttribute"/> representing the extension attributes of this node.</returns>
     public IEnumerable<XAttribute> ExtAttributes()
     {
       return this.Element.Attributes().Where(a => a.Name != XNamespace.Xml + "base" && a.Name != XNamespace.Xml + "lang" && a.Name.NamespaceName != "");
     }
 
-    /// <summary>Returns an <see cref="IEnumerable&lt;T&gt;"/> of <see cref="XAttribute"/> representing the extension attributes with the specified <see cref="XName"/>.</summary>
+    /// <summary>Returns the extension attributes with the specified <see cref="XName"/>.</summary>
     /// <param name="name">An <see cref="XName"/> representing the name of the extension attributes.</param>
-    /// <returns>An <see cref="IEnumerable&lt;T&gt;"/> of <see cref="XAttribute"/> representing the extension attributes with the specified <see cref="XName"/>.</returns>
+    /// <returns>An <see cref="IEnumerable{T}"/> of <see cref="XAttribute"/> representing the extension attributes with the specified <see cref="XName"/>.</returns>
     public IEnumerable<XAttribute> ExtAttributes(XName name)
     {
       return this.ExtAttributes().Where(a => a.Name == name);

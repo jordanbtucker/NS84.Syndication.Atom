@@ -17,8 +17,8 @@ namespace NerdSince1984.Syndication.Atom
     /// <param name="element">An <see cref="XElement"/> to create the node from.</param>
     protected AtomDateNode(XElement element) : base(element) { }
 
-    /// <summary>Gets or sets a <see cref="DateTime"/> representing the date and time of this node.</summary>
-    /// <returns>A <see cref="DateTime"/> representing the date and time of this node.</returns>
+    /// <summary>Gets or sets the date and time of this node.</summary>
+    /// <value>A <see cref="DateTime"/> representing the date and time of this node.</value>
     public DateTime Date
     {
       get { return (DateTime)this.Element; }
@@ -35,6 +35,7 @@ namespace NerdSince1984.Syndication.Atom
     /// <summary>Converts an <see cref="AtomDateNode"/> to a <see cref="DateTime"/>.</summary>
     /// <param name="node">An <see cref="AtomDateNode"/> to convert to a <see cref="DateTime"/>.</param>
     /// <returns>A <see cref="DateTime"/> converted from the specified <see cref="AtomDateNode"/>.</returns>
+    /// <exception cref="ArgumentNullException"><paramref name="node"/> is null.</exception>
     public static implicit operator DateTime(AtomDateNode node)
     {
       if(node == null) throw new ArgumentNullException("node");

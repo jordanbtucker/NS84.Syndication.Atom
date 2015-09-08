@@ -99,8 +99,8 @@ namespace NerdSince1984.Syndication.Atom
       ((XElement)this).Save(writer);
     }
 
-    /// <summary>Gets or sets an <see cref="AtomId"/> representing the ID of this feed.</summary>
-    /// <returns>An <see cref="AtomId"/> representing the ID of this feed.</returns>
+    /// <summary>Gets or sets the ID of this feed.</summary>
+    /// <value>An <see cref="AtomId"/> representing the ID of this feed.</value>
     /// <exception cref="ArgumentNullException"><paramref name="value"/> is null.</exception>
     public override AtomId Id
     {
@@ -113,8 +113,8 @@ namespace NerdSince1984.Syndication.Atom
       }
     }
 
-    /// <summary>Gets or sets an <see cref="AtomTitle"/> representing the title of this feed.</summary>
-    /// <returns>An <see cref="AtomTitle"/> representing the title of this feed.</returns>
+    /// <summary>Gets or sets the title of this feed.</summary>
+    /// <value>An <see cref="AtomTitle"/> representing the title of this feed.</value>
     /// <exception cref="ArgumentNullException"><paramref name="value"/> is null.</exception>
     public override AtomTitle Title
     {
@@ -127,8 +127,8 @@ namespace NerdSince1984.Syndication.Atom
       }
     }
 
-    /// <summary>Gets or sets an <see cref="AtomUpdated"/> representing the date and time when this feed was last updated.</summary>
-    /// <returns>An <see cref="AtomUpdated"/> representing the date and time when this feed was last updated.</returns>
+    /// <summary>Gets or sets the date and time when this feed was last updated.</summary>
+    /// <value>An <see cref="AtomUpdated"/> representing the date and time when this feed was last updated.</value>
     /// <exception cref="ArgumentNullException"><paramref name="value"/> is null.</exception>
     public override AtomUpdated Updated
     {
@@ -141,15 +141,15 @@ namespace NerdSince1984.Syndication.Atom
       }
     }
 
-    /// <summary>Gets an <see cref="IEnumerable&lt;T&gt;"/> of <see cref="AtomEntry"/> representing the entries in this feed.</summary>
-    /// <returns>An <see cref="IEnumerable&lt;T&gt;"/> of <see cref="AtomEntry"/> representing the entries in this feed.</returns>
+    /// <summary>Gets the entries in this feed.</summary>
+    /// <value>An <see cref="IEnumerable{T}"/> of <see cref="AtomEntry"/> representing the entries in this feed.</value>
     public IEnumerable<AtomEntry> Entries
     {
       get { return this.Element.Elements(AtomNamespace + "entry").Select(e => (AtomEntry)e); }
     }
 
-    /// <summary>Gets an <see cref="XName"/> representing the name of the underlying element.</summary>
-    /// <returns>An <see cref="XName"/> representing the name of the underlying element. For <see cref="AtomFeed"/>, this value is <see cref="AtomNamespace"/> + "feed".</returns>
+    /// <summary>Gets the name of the underlying element.</summary>
+    /// <value>An <see cref="XName"/> representing the name of the underlying element. For <see cref="AtomFeed"/>, this value is <see cref="AtomNamespace"/> + "feed".</value>
     protected override XName ElementName
     {
       get { return AtomNamespace + "feed"; }

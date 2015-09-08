@@ -23,7 +23,7 @@ namespace NerdSince1984.Syndication.Atom
     protected AtomTextNode(XElement element) : base(element) { }
 
     /// <summary>Gets or sets a <see cref="string"/> representing the text of this node.</summary>
-    /// <returns>A <see cref="string"/> representing the text of this node.</returns>
+    /// <value>A <see cref="string"/> representing the text of this node.</value>
     /// <exception cref="ArgumentNullException"><paramref name="value"/> is null.</exception>
     /// <exception cref="ArgumentException"><paramref name="value"/> is an empty <see cref="string"/>.</exception>
     public string Text
@@ -47,7 +47,7 @@ namespace NerdSince1984.Syndication.Atom
     }
 
     /// <summary>Gets an <see cref="AtomTextType"/> representing the type of text of this node.</summary>
-    /// <returns>An <see cref="AtomTextType"/> representing the type of text of this node.</returns>
+    /// <value>An <see cref="AtomTextType"/> representing the type of text of this node.</value>
     public AtomTextType Type
     {
       get
@@ -90,7 +90,8 @@ namespace NerdSince1984.Syndication.Atom
     /// <param name="text">A <see cref="string"/> representing the text to set.</param>
     /// <param name="type">An <see cref="AtomTextType"/> representing the type of text.</param>
     /// <exception cref="ArgumentNullException"><paramref name="text"/> is null.</exception>
-    /// <exception cref="ArgumentException"><paramref name="text"/> is an empty <see cref="string"/>.</exception>
+    /// <exception cref="ArgumentException"><paramref name="text"/> is an empty <see cref="string"/>, or <paramref name="type"/> is "xhtml" and <paramref name="text"/> is not a valid XHTML element.</exception>
+    /// <exception cref="InvalidOperationException"><paramref name="type"/> is "xhtml" and <paramref name="text"/> is not a valid XHTML div element.</exception>
     public void SetText(string text, AtomTextType type)
     {
       if(text == null) throw new ArgumentNullException("text");
@@ -120,7 +121,7 @@ namespace NerdSince1984.Syndication.Atom
     /// <summary>Converts an <see cref="AtomTextNode"/> to a <see cref="string"/>.</summary>
     /// <param name="node">An <see cref="AtomTextNode"/> to convert to a <see cref="string"/>.</param>
     /// <returns>A <see cref="string"/> converted from the specified <see cref="AtomTextNode"/>.</returns>
-    public static implicit operator string(AtomTextNode node)
+    public static implicit operator string (AtomTextNode node)
     {
       return node == null ? null : node.Text;
     }

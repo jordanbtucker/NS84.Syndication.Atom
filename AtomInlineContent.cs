@@ -28,7 +28,7 @@ namespace NerdSince1984.Syndication.Atom
     protected AtomInlineContent(XElement element) : base(element) { }
 
     /// <summary>Gets or sets the content as text.</summary>
-    /// <returns>A <see cref="string"/> representing the content as text.</returns>
+    /// <value>A <see cref="string"/> representing the content as text.</value>
     public string Text
     {
       get

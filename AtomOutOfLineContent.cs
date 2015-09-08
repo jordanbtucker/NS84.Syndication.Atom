@@ -28,7 +28,7 @@ namespace NerdSince1984.Syndication.Atom
     protected AtomOutOfLineContent(XElement element) : base(element) { }
 
     /// <summary>Gets or sets the src of the content.</summary>
-    /// <returns>A <see cref="string"/> representing the src of the content.</returns>
+    /// <value>A <see cref="string"/> representing the src of the content.</value>
     /// <exception cref="ArgumentNullException"><paramref name="value"/> is null.</exception>
     /// <exception cref="ArgumentException"><paramref name="value"/> is an empty <see cref="string"/>.</exception>
     public string Src

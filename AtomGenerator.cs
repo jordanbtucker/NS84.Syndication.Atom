@@ -19,7 +19,7 @@ namespace NerdSince1984.Syndication.Atom
     protected AtomGenerator(XElement element) : base(element) { }
 
     /// <summary>Gets or sets the text information about the generator.</summary>
-    /// <returns>A <see cref="string"/> representing text information about the generator.</returns>
+    /// <value>A <see cref="string"/> representing text information about the generator.</value>
     public string Text
     {
       get { return (string)this.Element; }
@@ -27,7 +27,7 @@ namespace NerdSince1984.Syndication.Atom
     }
 
     /// <summary>Gets or sets the URI of the generator.</summary>
-    /// <returns>A <see cref="string"/> representing the URI of the generator.</returns>
+    /// <value>A <see cref="string"/> representing the URI of the generator.</value>
     public string Uri
     {
       get { return (string)this.Element.Attribute("uri"); }
@@ -35,15 +35,15 @@ namespace NerdSince1984.Syndication.Atom
     }
 
     /// <summary>Gets or sets the version of the generator.</summary>
-    /// <returns>A <see cref="string"/> representing the version of the generator.</returns>
+    /// <value>A <see cref="string"/> representing the version of the generator.</value>
     public string Version
     {
       get { return (string)this.Element.Attribute("version"); }
       protected set { this.Element.SetAttributeValue("version", value); }
     }
 
-    /// <summary>Gets an <see cref="XName"/> representing the name of the underlying element.</summary>
-    /// <returns>An <see cref="XName"/> representing the name of the underlying element. For <see cref="AtomGenerator"/>, this value is <see cref="AtomFeed.AtomNamespace"/> + "generator".</returns>
+    /// <summary>Gets the name of the underlying element.</summary>
+    /// <value>An <see cref="XName"/> representing the name of the underlying element. For <see cref="AtomGenerator"/>, this value is <see cref="AtomFeed.AtomNamespace"/> + "generator".</value>
     protected override XName ElementName
     {
       get { return AtomNamespace + "generator"; }

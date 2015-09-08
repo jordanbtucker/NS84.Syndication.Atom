@@ -22,16 +22,16 @@ namespace NerdSince1984.Syndication.Atom
       return this.Element.Element(name);
     }
 
-    /// <summary>Returns an <see cref="IEnumerable&lt;T&gt;"/> of <see cref="XElement"/> representing the extension elements in this node.</summary>
-    /// <returns>An <see cref="IEnumerable&lt;T&gt;"/> of <see cref="XElement"/> representing the extension elements in this node.</returns>
+    /// <summary>Returns an <see cref="IEnumerable{T}"/> of <see cref="XElement"/> representing the extension elements in this node.</summary>
+    /// <returns>An <see cref="IEnumerable{T}"/> of <see cref="XElement"/> representing the extension elements in this node.</returns>
     public IEnumerable<XElement> ExtElements()
     {
       return this.Element.Elements();
     }
 
-    /// <summary>Returns an <see cref="IEnumerable&lt;T&gt;"/> of <see cref="XElement"/> representing the extension elements with the specified <see cref="XName"/>.</summary>
+    /// <summary>Returns an <see cref="IEnumerable{T}"/> of <see cref="XElement"/> representing the extension elements with the specified <see cref="XName"/>.</summary>
     /// <param name="name">An <see cref="XName"/> representing the name of the extension elements.</param>
-    /// <returns>An <see cref="IEnumerable&lt;T&gt;"/> of <see cref="XElement"/> representing the extension elements with the specified <see cref="XName"/>.</returns>
+    /// <returns>An <see cref="IEnumerable{T}"/> of <see cref="XElement"/> representing the extension elements with the specified <see cref="XName"/>.</returns>
     public IEnumerable<XElement> ExtElements(XName name)
     {
       return this.Element.Elements(name);

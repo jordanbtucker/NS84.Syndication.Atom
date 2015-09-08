@@ -94,8 +94,8 @@ namespace NerdSince1984.Syndication.Atom
       ((XElement)this).Save(writer);
     }
 
-    /// <summary>Gets or sets an <see cref="AtomId"/> representing the ID of this entry.</summary>
-    /// <returns>An <see cref="AtomId"/> representing the ID of this entry.</returns>
+    /// <summary>Gets or sets the ID of this entry.</summary>
+    /// <value>An <see cref="AtomId"/> representing the ID of this entry.</value>
     /// <exception cref="ArgumentNullException"><paramref name="value"/> is null.</exception>
     public override AtomId Id
     {
@@ -108,8 +108,8 @@ namespace NerdSince1984.Syndication.Atom
       }
     }
 
-    /// <summary>Gets or sets an <see cref="AtomTitle"/> representing the title of this entry.</summary>
-    /// <returns>An <see cref="AtomTitle"/> representing the title of this entry.</returns>
+    /// <summary>Gets or sets the title of this entry.</summary>
+    /// <value>An <see cref="AtomTitle"/> representing the title of this entry.</value>
     /// <exception cref="ArgumentNullException"><paramref name="value"/> is null.</exception>
     public override AtomTitle Title
     {
@@ -122,8 +122,8 @@ namespace NerdSince1984.Syndication.Atom
       }
     }
 
-    /// <summary>Gets or sets an <see cref="AtomUpdated"/> representing the date and time when this entry was last updated.</summary>
-    /// <returns>An <see cref="AtomUpdated"/> representing the date and time when this entry was last updated.</returns>
+    /// <summary>Gets or sets the date and time when this entry was last updated.</summary>
+    /// <value>An <see cref="AtomUpdated"/> representing the date and time when this entry was last updated.</value>
     /// <exception cref="ArgumentNullException"><paramref name="value"/> is null.</exception>
     public override AtomUpdated Updated
     {
@@ -136,56 +136,56 @@ namespace NerdSince1984.Syndication.Atom
       }
     }
 
-    /// <summary>Gets or sets an <see cref="AtomContent"/> representing the content of this entry.</summary>
-    /// <returns>An <see cref="AtomContent"/> representing the content of this entry.</returns>
+    /// <summary>Gets or sets the content of this entry.</summary>
+    /// <value>An <see cref="AtomContent"/> representing the content of this entry.</value>
     public virtual AtomContent Content
     {
       get { return (AtomContent)this.Element.Element(AtomNamespace + "content"); }
       set { this.SetSingleElement(AtomNamespace + "content", value); }
     }
 
-    /// <summary>Gets or sets an <see cref="AtomPublished"/> representing the date and time when this entry was published.</summary>
-    /// <returns>An <see cref="AtomPublished"/> representing the date and time when this entry was published.</returns>
+    /// <summary>Gets or sets the date and time when this entry was published.</summary>
+    /// <value>An <see cref="AtomPublished"/> representing the date and time when this entry was published.</value>
     public virtual AtomPublished Published
     {
       get { return this.Element.Element(AtomNamespace + "published"); }
       set { this.SetSingleElement(AtomNamespace + "published", value); }
     }
 
-    /// <summary>Gets or sets an <see cref="AtomSource"/> representing the source of this entry.</summary>
-    /// <returns>An <see cref="AtomSource"/> representing the source of this entry.</returns>
+    /// <summary>Gets or sets the source of this entry.</summary>
+    /// <value>An <see cref="AtomSource"/> representing the source of this entry.</value>
     public virtual AtomSource Source
     {
       get { return this.Element.Element(AtomNamespace + "source"); }
       set { this.SetSingleElement(AtomNamespace + "source", value); }
     }
 
-    /// <summary>Gets or sets an <see cref="AtomSummary"/> representing the summary of this entry.</summary>
-    /// <returns>An <see cref="AtomSummary"/> representing the summary of this entry.</returns>
+    /// <summary>Gets or sets the summary of this entry.</summary>
+    /// <value>An <see cref="AtomSummary"/> representing the summary of this entry.</value>
     public virtual AtomSummary Summary
     {
       get { return this.Element.Element(AtomNamespace + "summary"); }
       set { this.SetSingleElement(AtomNamespace + "summary", value); }
     }
 
-    /// <summary>Gets or sets an <see cref="AtomPubEdited"/> representing the date and time when this entry was last edited.</summary>
-    /// <returns>An <see cref="AtomPubEdited"/> representing the date and time when this entry was last edited.</returns>
+    /// <summary>Gets or sets the date and time when this entry was last edited.</summary>
+    /// <value>An <see cref="AtomPubEdited"/> representing the date and time when this entry was last edited.</value>
     public virtual AtomPubEdited Edited
     {
       get { return this.Element.Element(AtomPubService.AtomPubNamespace + "edited"); }
       set { this.SetSingleElement(AtomPubService.AtomPubNamespace + "edited", value); }
     }
 
-    /// <summary>Gets or sets an <see cref="AtomPubControl"/> representing the control properties of this entry.</summary>
-    /// <returns>An <see cref="AtomPubControl"/> representing the control properties of this entry.</returns>
+    /// <summary>Gets or sets the control properties of this entry.</summary>
+    /// <value>An <see cref="AtomPubControl"/> representing the control properties of this entry.</value>
     public virtual AtomPubControl Control
     {
       get { return this.Element.Element(AtomPubService.AtomPubNamespace + "control"); }
       set { this.SetSingleElement(AtomPubService.AtomPubNamespace + "control", value); }
     }
 
-    /// <summary>Gets an <see cref="XName"/> representing the name of the underlying element.</summary>
-    /// <returns>An <see cref="XName"/> representing the name of the underlying element. For <see cref="AtomEntry"/>, this value is <see cref="AtomFeed.AtomNamespace"/> + "entry".</returns>
+    /// <summary>Gets the name of the underlying element.</summary>
+    /// <value>An <see cref="XName"/> representing the name of the underlying element. For <see cref="AtomEntry"/>, this value is <see cref="AtomFeed.AtomNamespace"/> + "entry".</value>
     protected override XName ElementName
     {
       get { return AtomNamespace + "entry"; }

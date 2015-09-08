@@ -14,8 +14,8 @@ namespace NerdSince1984.Syndication.Atom
     /// <param name="element">An <see cref="XElement"/> to create the node from.</param>
     protected AtomPublished(XElement element) : base(element) { }
 
-    /// <summary>Gets an <see cref="XName"/> representing the name of the underlying element.</summary>
-    /// <returns>An <see cref="XName"/> representing the name of the underlying element. For <see cref="AtomPublished"/>, this value is <see cref="AtomFeed.AtomNamespace"/> + "published".</returns>
+    /// <summary>Gets the name of the underlying element.</summary>
+    /// <value>An <see cref="XName"/> representing the name of the underlying element. For <see cref="AtomPublished"/>, this value is <see cref="AtomFeed.AtomNamespace"/> + "published".</value>
     protected override XName ElementName
     {
       get { return AtomNamespace + "published"; }
