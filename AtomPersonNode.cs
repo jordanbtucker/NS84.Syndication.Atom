@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Xml.Linq;
 
 namespace NerdSince1984.Syndication.Atom
 {
   /// <summary>An abstract base class that represents a person based Atom node.</summary>
+  [DebuggerDisplay("Name = {Name}, Email = {Email}, Uri = {Uri}")]
   public abstract class AtomPersonNode : AtomExtensionContainerNode
   {
     /// <summary>Initializes a new instance of the <see cref="AtomPersonNode"/> class with the specified name.</summary>

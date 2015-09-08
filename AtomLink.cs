@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Xml.Linq;
 
 namespace NerdSince1984.Syndication.Atom
 {
   /// <summary>Represents a link in an Atom feed or entry.</summary>
+  [DebuggerDisplay("Href = {Href}, Rel = {Rel}, Type = {Type}")]
   public class AtomLink : AtomUndefinedContainerNode
   {
     /// <summary>Initializes a new instance of the <see cref="AtomLink"/> class with the specified href.</summary>

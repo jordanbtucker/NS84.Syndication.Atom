@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Xml.Linq;
 
 namespace NerdSince1984.Syndication.Atom
 {
   /// <summary>An abstract base class that represents a text based Atom node.</summary>
+  [DebuggerDisplay("Type = {Type}")]
   public abstract class AtomTextNode : AtomNode
   {
     /// <summary>Initializes a new instance of the <see cref="AtomTextNode"/> class with the specified text.</summary>

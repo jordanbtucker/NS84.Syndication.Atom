@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Xml.Linq;
 
 namespace NerdSince1984.Syndication.Atom
 {
   /// <summary>Represents a category of an Atom feed or entry.</summary>
+  [DebuggerDisplay("Term = {Term}, Label = {Label}, Scheme = {Scheme}")]
   public class AtomCategory : AtomUndefinedContainerNode
   {
     /// <summary>Initializes a new instance of the <see cref="AtomCategory"/> class with the specified term.</summary>

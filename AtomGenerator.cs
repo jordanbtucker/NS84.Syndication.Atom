@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Xml.Linq;
 
 namespace NerdSince1984.Syndication.Atom
 {
   /// <summary>Represents information about the generator of an Atom feed or source.</summary>
+  [DebuggerDisplay("Text = {Text}, Uri = {Uri}, Version = {Version}")]
   public class AtomGenerator : AtomNode
   {
     /// <summary>Initializes a new instance of the <see cref="AtomGenerator"/> class.</summary>

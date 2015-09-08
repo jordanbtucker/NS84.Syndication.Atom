@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Xml.Linq;
 
 namespace NerdSince1984.Syndication.Atom
 {
   /// <summary>Represents the out-of-line content of an Atom entry.</summary>
+  [DebuggerDisplay("Src = {Src}, Type = {Type}")]
   public class AtomOutOfLineContent : AtomContent
   {
     /// <summary>Initializes a new instance of the <see cref="AtomOutOfLineContent"/> class with the specified src.</summary>

@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Xml.Linq;
 
 namespace NerdSince1984.Syndication.Atom
 {
   /// <summary>An abstract base class that represents date and time based Atom nodes.</summary>
+  [DebuggerDisplay("Date = {Date}")]
   public abstract class AtomDateNode : AtomNode
   {
     /// <summary>Initializes a new instance of the <see cref="AtomDateNode"/> class with the specified date and time.</summary>

@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Xml.Linq;
 
 namespace NerdSince1984.Syndication.Atom
 {
   /// <summary>An abstract base class that represents a URI based Atom node.</summary>
+  [DebuggerDisplay("Uri = {Uri}")]
   public abstract class AtomUriNode : AtomNode
   {
     /// <summary>Initializes a new instance of the <see cref="AtomUriNode"/> class with the specified URI.</summary>
