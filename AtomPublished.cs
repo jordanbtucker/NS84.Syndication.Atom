@@ -29,9 +29,9 @@ namespace NerdSince1984.Syndication.Atom
       return new AtomPublished(date);
     }
 
-    /// <summary>Converts a <see cref="Nullable&lt;T&gt;"/> of <see cref="DateTime"/> to an <see cref="AtomPublished"/>.</summary>
-    /// <param name="date">A <see cref="Nullable&lt;T&gt;"/> of <see cref="DateTime"/> to convert to an <see cref="AtomPublished"/>.</param>
-    /// <returns>An <see cref="AtomPublished"/> converted from the specified <see cref="Nullable&lt;T&gt;"/> of <see cref="DateTime"/>.</returns>
+    /// <summary>Converts a <see cref="Nullable{T}"/> of <see cref="DateTime"/> to an <see cref="AtomPublished"/>.</summary>
+    /// <param name="date">A <see cref="Nullable{T}"/> of <see cref="DateTime"/> to convert to an <see cref="AtomPublished"/>.</param>
+    /// <returns>An <see cref="AtomPublished"/> converted from the specified <see cref="Nullable{T}"/> of <see cref="DateTime"/>.</returns>
     public static implicit operator AtomPublished(DateTime? date)
     {
       return date == null ? null : new AtomPublished(date.Value);

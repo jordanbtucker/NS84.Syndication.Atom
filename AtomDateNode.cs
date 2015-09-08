@@ -44,9 +44,9 @@ namespace NerdSince1984.Syndication.Atom
       return node.Date;
     }
 
-    /// <summary>Converts an <see cref="AtomDateNode"/> to a <see cref="Nullable&lt;T&gt;"/> of <see cref="DateTime"/>.</summary>
-    /// <param name="node">An <see cref="AtomDateNode"/> to convert to a <see cref="Nullable&lt;T&gt;"/> of <see cref="DateTime"/>.</param>
-    /// <returns>A <see cref="Nullable&lt;T&gt;"/> of <see cref="DateTime"/> converted from the specified <see cref="AtomDateNode"/>.</returns>
+    /// <summary>Converts an <see cref="AtomDateNode"/> to a <see cref="Nullable{T}"/> of <see cref="DateTime"/>.</summary>
+    /// <param name="node">An <see cref="AtomDateNode"/> to convert to a <see cref="Nullable{T}"/> of <see cref="DateTime"/>.</param>
+    /// <returns>A <see cref="Nullable{T}"/> of <see cref="DateTime"/> converted from the specified <see cref="AtomDateNode"/>.</returns>
     public static implicit operator DateTime?(AtomDateNode node)
     {
       return node == null ? (DateTime?)null : node.Date;
