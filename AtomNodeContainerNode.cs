@@ -23,12 +23,12 @@ namespace NerdSince1984.Syndication.Atom
       else current.ReplaceWith(element);
     }
 
-    /// <summary>When overridden in a derived class, gets a value indicating whether the specified <see cref="AtomNode"/> can be added.</summary>
+    /// <summary>When overridden in a derived class, returns a value indicating whether the specified <see cref="AtomNode"/> can be added.</summary>
     /// <param name="node">The <see cref="AtomNode"/> to test.</param>
     /// <returns>True if the specified <see cref="AtomNode"/> can be added; otherwise, false.</returns>
     protected abstract bool CanAddNode(AtomNode node);
 
-    /// <summary>When overridden in a derived class, gets a value indicating whether the specified <see cref="AtomNode"/> can be removed.</summary>
+    /// <summary>When overridden in a derived class, returns a value indicating whether the specified <see cref="AtomNode"/> can be removed.</summary>
     /// <param name="node">The <see cref="AtomNode"/> to test.</param>
     /// <returns>True if the specified <see cref="AtomNode"/> can be removed; otherwise, false.</returns>
     protected abstract bool CanRemoveNode(AtomNode node);
