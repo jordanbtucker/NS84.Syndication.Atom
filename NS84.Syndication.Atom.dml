@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <doc>
   <assembly>
-    <name>NerdSince1984.Syndication.Atom</name>
+    <name>NS84.Syndication.Atom</name>
   </assembly>
   <members>
-    <member name="T:NerdSince1984.Syndication.Atom.AtomFeed">
+    <member name="T:NS84.Syndication.Atom.AtomFeed">
       <remarks>
         <para>
           Atom is an XML-based document format that describes lists of related information known as "feeds".
@@ -15,10 +15,10 @@
         <para>
           An Atom Feed Document is a representation of an Atom feed, including metadata about the feed, and some or all
           of the entries associated with it. Its root is the atom:feed element represented by <see
-            cref="T:NerdSince1984.Syndication.Atom.AtomFeed"/>. The "atom:feed" element is the document (i.e.,
+            cref="T:NS84.Syndication.Atom.AtomFeed"/>. The "atom:feed" element is the document (i.e.,
           top-level) element of an Atom Feed Document, acting as a container for metadata and data associated with the
           feed. Its element children consist of metadata elements followed by zero or more atom:entry child elements
-          represented by <see cref="T:NerdSince1984.Syndication.Atom.AtomEntry"/>.
+          represented by <see cref="T:NS84.Syndication.Atom.AtomEntry"/>.
         </para>
       </remarks>
       <example>
@@ -65,7 +65,7 @@ feed.Save("feed.xml")]]>
   <title>Example Feed</title>
   <updated>2003-12-13T18:30:02Z</updated>
   <generator uri="http://nerdsince1984.com" version="1.0">
-    NerdSince1984.Syndication.Atom</generator>
+    NS84.Syndication.Atom</generator>
   <link href="http://example.org/" />
   <author>
     <name>John Doe</name>
@@ -81,20 +81,20 @@ feed.Save("feed.xml")]]>
         </code>
       </example>
     </member>
-    <member name="M:NerdSince1984.Syndication.Atom.AtomFeed.#ctor(NerdSince1984.Syndication.Atom.AtomId,NerdSince1984.Syndication.Atom.AtomTitle,NerdSince1984.Syndication.Atom.AtomUpdated)">
+    <member name="M:NS84.Syndication.Atom.AtomFeed.#ctor(NS84.Syndication.Atom.AtomId,NS84.Syndication.Atom.AtomTitle,NS84.Syndication.Atom.AtomUpdated)">
       <remarks>
         <para>
           According to the Atom standard, an atom:feed element requires one child atom:id element and one atom:title
-          element, represented by <see cref="T:NerdSince1984.Syndication.Atom.AtomId"/> and <see
-          cref="T:NerdSince1984.Syndication.Atom.AtomTitle"/> respectively. These types can be implicitly converted, or
+          element, represented by <see cref="T:NS84.Syndication.Atom.AtomId"/> and <see
+          cref="T:NS84.Syndication.Atom.AtomTitle"/> respectively. These types can be implicitly converted, or
           coerced, from a <see cref="T:System.String"/>. An atom:feed element also requires one child atom:updated
-          element, represented by <see cref="T:NerdSince1984.Syndication.Atom.AtomUpdated"/>, which can be coerced from
+          element, represented by <see cref="T:NS84.Syndication.Atom.AtomUpdated"/>, which can be coerced from
           a <see cref="T:System.DateTime"/>. This makes it possible to construct an <see
-          cref="T:NerdSince1984.Syndication.Atom.AtomFeed"/> using two <see cref="T:System.String"/> instances and a
+          cref="T:NS84.Syndication.Atom.AtomFeed"/> using two <see cref="T:System.String"/> instances and a
           <see cref="T:System.DateTime"/> instead of constructing an <see
-          cref="T:NerdSince1984.Syndication.Atom.AtomId"/>, an <see
-            cref="T:NerdSince1984.Syndication.Atom.AtomTitle"/>, and an <see
-              cref="T:NerdSince1984.Syndication.Atom.AtomUpdated"/>.
+          cref="T:NS84.Syndication.Atom.AtomId"/>, an <see
+            cref="T:NS84.Syndication.Atom.AtomTitle"/>, and an <see
+              cref="T:NS84.Syndication.Atom.AtomUpdated"/>.
         </para>
       </remarks>
       <example>
@@ -125,7 +125,7 @@ Dim feed2 As AtomFeed = New AtomFeed(New AtomId("http://example.org/feed"), _
         </code>
       </example>
     </member>
-    <member name="T:NerdSince1984.Syndication.Atom.AtomEntry">
+    <member name="T:NS84.Syndication.Atom.AtomEntry">
       <remarks>
         <para>
           The "atom:entry" element represents an individual entry, acting as a container for metadata and data
@@ -170,20 +170,20 @@ entry.Save("entry.xml")]]>
         </code>
       </example>
     </member>
-    <member name="M:NerdSince1984.Syndication.Atom.AtomEntry.#ctor(NerdSince1984.Syndication.Atom.AtomId,NerdSince1984.Syndication.Atom.AtomTitle,NerdSince1984.Syndication.Atom.AtomUpdated)">
+    <member name="M:NS84.Syndication.Atom.AtomEntry.#ctor(NS84.Syndication.Atom.AtomId,NS84.Syndication.Atom.AtomTitle,NS84.Syndication.Atom.AtomUpdated)">
       <remarks>
         <para>
           According to the Atom standard, an atom:entry element requires one child atom:id element and one atom:title
-          element, represented by <see cref="T:NerdSince1984.Syndication.Atom.AtomId"/> and <see
-          cref="T:NerdSince1984.Syndication.Atom.AtomTitle"/> respectively. These types can be implicitly converted, or
+          element, represented by <see cref="T:NS84.Syndication.Atom.AtomId"/> and <see
+          cref="T:NS84.Syndication.Atom.AtomTitle"/> respectively. These types can be implicitly converted, or
           coerced, from a <see cref="T:System.String"/>. An atom:entry element also requires one child atom:updated
-          element, represented by <see cref="T:NerdSince1984.Syndication.Atom.AtomUpdated"/>, which can be coerced from
+          element, represented by <see cref="T:NS84.Syndication.Atom.AtomUpdated"/>, which can be coerced from
           a <see cref="T:System.DateTime"/>. This makes it possible to construct an <see
-          cref="T:NerdSince1984.Syndication.Atom.AtomEntry"/> using two <see cref="T:System.String"/> instances and a
+          cref="T:NS84.Syndication.Atom.AtomEntry"/> using two <see cref="T:System.String"/> instances and a
           <see cref="T:System.DateTime"/> instead of constructing an <see
-          cref="T:NerdSince1984.Syndication.Atom.AtomId"/>, an <see
-            cref="T:NerdSince1984.Syndication.Atom.AtomTitle"/>, and an <see
-              cref="T:NerdSince1984.Syndication.Atom.AtomUpdated"/>.
+          cref="T:NS84.Syndication.Atom.AtomId"/>, an <see
+            cref="T:NS84.Syndication.Atom.AtomTitle"/>, and an <see
+              cref="T:NS84.Syndication.Atom.AtomUpdated"/>.
         </para>
       </remarks>
       <example>
@@ -214,23 +214,23 @@ Dim entry2 As AtomEntry = New AtomEntry(New AtomId("http://example.org/entry"), 
         </code>
       </example>
     </member>
-    <member name="T:NerdSince1984.Syndication.Atom.AtomContent">
+    <member name="T:NS84.Syndication.Atom.AtomContent">
       <remarks>
         <para>
           The "atom:content" element either contains or links to the content of the entry. For documentation on
-          managing contained content, see <see cref="T:NerdSince1984.Syndication.Atom.AtomInlineContent"/>. For
+          managing contained content, see <see cref="T:NS84.Syndication.Atom.AtomInlineContent"/>. For
           documentation on managing linked content, see <see
-            cref="T:NerdSince1984.Syndication.Atom.AtomOutOfLineContent"/>.
+            cref="T:NS84.Syndication.Atom.AtomOutOfLineContent"/>.
         </para>
       </remarks>
     </member>
-    <member name="T:NerdSince1984.Syndication.Atom.AtomInlineContent">
+    <member name="T:NS84.Syndication.Atom.AtomInlineContent">
       <remarks>
         <para>
           The "atom:content" element either contains or links to the content of the entry. <see
-            cref="T:NerdSince1984.Syndication.Atom.AtomInlineContent"/> represents an atom:content element that
+            cref="T:NS84.Syndication.Atom.AtomInlineContent"/> represents an atom:content element that
           contains the content of the entry. For documentation on managing linked content, see <see
-            cref="T:NerdSince1984.Syndication.Atom.AtomOutOfLineContent"/>.
+            cref="T:NS84.Syndication.Atom.AtomOutOfLineContent"/>.
         </para>
       </remarks>
       <example>
@@ -312,13 +312,13 @@ Console.WriteLine(jpeg.ToXml())]]>
         </code>
       </example>
     </member>
-    <member name="T:NerdSince1984.Syndication.Atom.AtomOutOfLineContent">
+    <member name="T:NS84.Syndication.Atom.AtomOutOfLineContent">
       <remarks>
         <para>
           The "atom:content" element either contains or links to the content of the entry. <see
-            cref="T:NerdSince1984.Syndication.Atom.AtomOutOfLineContent"/> represents an atom:content element that
+            cref="T:NS84.Syndication.Atom.AtomOutOfLineContent"/> represents an atom:content element that
           links to the content of the entry. For documentation on managing contained content, see <see
-            cref="T:NerdSince1984.Syndication.Atom.AtomInlineContent"/>.
+            cref="T:NS84.Syndication.Atom.AtomInlineContent"/>.
         </para>
       </remarks>
       <example>
