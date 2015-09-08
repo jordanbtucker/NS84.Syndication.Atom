@@ -124,7 +124,7 @@
     <value>http://ns84.com</value>
   </data>
   <data name="AtomGeneratorVersion" xml:space="preserve">
-    <value>0.9.0</value>
+    <value>1.0.0</value>
   </data>
   <data name="AtomNamespace" xml:space="preserve">
     <value>http://www.w3.org/2005/Atom</value>

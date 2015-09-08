@@ -79,7 +79,7 @@ namespace NS84.Syndication.Atom {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 0.9.0.
+        ///   Looks up a localized string similar to 1.0.0.
         /// </summary>
         internal static string AtomGeneratorVersion {
             get {
