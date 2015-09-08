@@ -36,8 +36,8 @@ namespace NerdSince1984.Syndication.Atom
     /// <param name="element">An <see cref="XElement"/> to create the node from.</param>
     protected AtomPersonNode(XElement element) : base(element) { }
 
-    /// <summary>Gets or sets the name of the person.</summary>
-    /// <value>A <see cref="string"/> representing the name of the person.</value>
+    /// <summary>Gets or sets the name of this person.</summary>
+    /// <value>A <see cref="string"/> representing the name of this person.</value>
     /// <exception cref="ArgumentNullException"><paramref name="value"/> is null.</exception>
     /// <exception cref="ArgumentException"><paramref name="value"/> is an empty <see cref="string"/>.</exception>
     public string Name
@@ -52,24 +52,24 @@ namespace NerdSince1984.Syndication.Atom
       }
     }
 
-    /// <summary>Gets or sets the email address of the person.</summary>
-    /// <value>A <see cref="string"/> representing the email address of the person.</value>
+    /// <summary>Gets or sets the email address of this person.</summary>
+    /// <value>A <see cref="string"/> representing the email address of this person.</value>
     public string Email
     {
       get { return (string)this.Element.Element(AtomNamespace + "email"); }
       set { this.Element.SetElementValue(AtomNamespace + "email", value); }
     }
 
-    /// <summary>Gets or sets the URI of the person.</summary>
-    /// <value>A <see cref="string"/> representing the URI of the person.</value>
+    /// <summary>Gets or sets the URI of this person.</summary>
+    /// <value>A <see cref="string"/> representing the URI of this person.</value>
     public string Uri
     {
       get { return (string)this.Element.Element(AtomNamespace + "uri"); }
       set { this.Element.SetElementValue(AtomNamespace + "uri", value); }
     }
 
-    /// <summary>Returns a <see cref="string"/> representing the name of the person.</summary>
-    /// <returns>A <see cref="string"/> representing the name of the person.</returns>
+    /// <summary>Returns a <see cref="string"/> representing the name of this person.</summary>
+    /// <returns>A <see cref="string"/> representing the name of this person.</returns>
     public override string ToString()
     {
       return this.Name;

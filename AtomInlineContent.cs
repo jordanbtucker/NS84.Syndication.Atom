@@ -27,8 +27,8 @@ namespace NerdSince1984.Syndication.Atom
     /// <param name="element">An <see cref="XElement"/> to create the node from.</param>
     protected AtomInlineContent(XElement element) : base(element) { }
 
-    /// <summary>Gets or sets the content as text.</summary>
-    /// <value>A <see cref="string"/> representing the content as text.</value>
+    /// <summary>Gets or sets this content as text.</summary>
+    /// <value>A <see cref="string"/> representing this content as text.</value>
     public string Text
     {
       get
@@ -44,29 +44,29 @@ namespace NerdSince1984.Syndication.Atom
       set { this.SetText(value, this.Type); }
     }
 
-    /// <summary>Sets the content as HTML.</summary>
+    /// <summary>Sets this content as HTML.</summary>
     /// <param name="html">A <see cref="string"/> representing the HTML content to set.</param>
     public void SetHtml(string html)
     {
       this.SetText(html, "html");
     }
 
-    /// <summary>Sets the content as XHTML.</summary>
+    /// <summary>Sets this content as XHTML.</summary>
     /// <param name="xhtml">A <see cref="string"/> representing the XHTML content to set.</param>
     public void SetXhtml(string xhtml)
     {
       this.SetText(xhtml, "xhtml");
     }
 
-    /// <summary>Sets the content as plain text.</summary>
+    /// <summary>Sets this content as plain text.</summary>
     /// <param name="text">A <see cref="string"/> representing the plain text content to set.</param>
     public void SetText(string text)
     {
       this.SetText(text, null);
     }
 
-    /// <summary>Sets the content as text of the specified type.</summary>
-    /// <param name="text">A <see cref="string"/> representing the content to set as text.</param>
+    /// <summary>Sets this content as text of the specified type.</summary>
+    /// <param name="text">A <see cref="string"/> representing this content to set as text.</param>
     /// <param name="type">A <see cref="string"/> representing the type of content.</param>
     /// <exception cref="ArgumentException"><paramref name="type"/> is "xhtml" and <paramref name="text"/> is not a valid XHTML element.</exception>
     /// <exception cref="InvalidOperationException"><paramref name="type"/> is "xhtml" and <paramref name="text"/> is not a valid XHTML div element.</exception>
@@ -86,8 +86,8 @@ namespace NerdSince1984.Syndication.Atom
       this.Element.SetAttributeValue("type", type);
     }
 
-    /// <summary>Returns a <see cref="string"/> representing the content as text.</summary>
-    /// <returns>A <see cref="string"/> representing the content as text.</returns>
+    /// <summary>Returns a <see cref="string"/> representing this content as text.</summary>
+    /// <returns>A <see cref="string"/> representing this content as text.</returns>
     public override string ToString()
     {
       return this.Text;

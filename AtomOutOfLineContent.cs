@@ -29,8 +29,8 @@ namespace NerdSince1984.Syndication.Atom
     /// <param name="element">An <see cref="XElement"/> to create the node from.</param>
     protected AtomOutOfLineContent(XElement element) : base(element) { }
 
-    /// <summary>Gets or sets the src of the content.</summary>
-    /// <value>A <see cref="string"/> representing the src of the content.</value>
+    /// <summary>Gets or sets the src of this content.</summary>
+    /// <value>A <see cref="string"/> representing the src of this content.</value>
     /// <exception cref="ArgumentNullException"><paramref name="value"/> is null.</exception>
     /// <exception cref="ArgumentException"><paramref name="value"/> is an empty <see cref="string"/>.</exception>
     public string Src
@@ -45,8 +45,8 @@ namespace NerdSince1984.Syndication.Atom
       }
     }
 
-    /// <summary>Returns a <see cref="string"/> representing the src of the content.</summary>
-    /// <returns>A <see cref="string"/> representing the src of the content.</returns>
+    /// <summary>Returns a <see cref="string"/> representing the src of this content.</summary>
+    /// <returns>A <see cref="string"/> representing the src of this content.</returns>
     public override string ToString()
     {
       return this.Src;

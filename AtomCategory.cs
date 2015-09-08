@@ -36,8 +36,8 @@ namespace NerdSince1984.Syndication.Atom
     /// <param name="element">An <see cref="XElement"/> to create the node from.</param>
     protected AtomCategory(XElement element) : base(element) { }
 
-    /// <summary>Gets or sets the term of the category.</summary>
-    /// <value>A <see cref="string"/> representing the term of the category.</value>
+    /// <summary>Gets or sets the term of this category.</summary>
+    /// <value>A <see cref="string"/> representing the term of this category.</value>
     /// <exception cref="ArgumentNullException"><paramref name="value"/> is null.</exception>
     /// <exception cref="ArgumentException"><paramref name="value"/> is an empty <see cref="string"/>.</exception>
     public string Term
@@ -52,16 +52,16 @@ namespace NerdSince1984.Syndication.Atom
       }
     }
 
-    /// <summary>Gets or sets the label of the category.</summary>
-    /// <value>A <see cref="string"/> representing the label of the category.</value>
+    /// <summary>Gets or sets the label of this category.</summary>
+    /// <value>A <see cref="string"/> representing the label of this category.</value>
     public string Label
     {
       get { return (string)this.Element.Attribute("label"); }
       set { this.Element.SetAttributeValue("label", value); }
     }
 
-    /// <summary>Gets or sets the scheme of the category.</summary>
-    /// <value>A <see cref="string"/> representing the scheme of the category.</value>
+    /// <summary>Gets or sets the scheme of this category.</summary>
+    /// <value>A <see cref="string"/> representing the scheme of this category.</value>
     public string Scheme
     {
       get { return (string)this.Element.Attribute("scheme"); }
@@ -75,8 +75,8 @@ namespace NerdSince1984.Syndication.Atom
       get { return AtomNamespace + "category"; }
     }
 
-    /// <summary>Returns a <see cref="string"/> representing the term of the category.</summary>
-    /// <returns>A <see cref="string"/> representing the term of the category.</returns>
+    /// <summary>Returns a <see cref="string"/> representing the term of this category.</summary>
+    /// <returns>A <see cref="string"/> representing the term of this category.</returns>
     public override string ToString()
     {
       return this.Term;

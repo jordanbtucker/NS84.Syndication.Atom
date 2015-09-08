@@ -36,8 +36,8 @@ namespace NerdSince1984.Syndication.Atom
     /// <param name="element">An <see cref="XElement"/> to create the node from.</param>
     protected AtomLink(XElement element) : base(element) { }
 
-    /// <summary>Gets or sets the href of the link.</summary>
-    /// <value>A <see cref="string"/> representing the href of the link.</value>
+    /// <summary>Gets or sets the href of this link.</summary>
+    /// <value>A <see cref="string"/> representing the href of this link.</value>
     /// <exception cref="ArgumentNullException"><paramref name="value"/> is null.</exception>
     /// <exception cref="ArgumentException"><paramref name="value"/> is an empty <see cref="string"/>.</exception>
     public virtual string Href
@@ -52,40 +52,40 @@ namespace NerdSince1984.Syndication.Atom
       }
     }
 
-    /// <summary>Gets or sets the rel of the link.</summary>
-    /// <value>A <see cref="string"/> representing the rel of the link.</value>
+    /// <summary>Gets or sets the rel of this link.</summary>
+    /// <value>A <see cref="string"/> representing the rel of this link.</value>
     public virtual string Rel
     {
       get { return (string)this.Element.Attribute("rel"); }
       set { this.Element.SetAttributeValue("rel", value); }
     }
 
-    /// <summary>Gets or sets the type of the link.</summary>
-    /// <value>A <see cref="string"/> representing the type of the link.</value>
+    /// <summary>Gets or sets the type of this link.</summary>
+    /// <value>A <see cref="string"/> representing the type of this link.</value>
     public virtual string Type
     {
       get { return (string)this.Element.Attribute("type"); }
       set { this.Element.SetAttributeValue("type", value); }
     }
 
-    /// <summary>Gets or sets the href language of the link.</summary>
-    /// <value>A <see cref="string"/> representing the href language of the link.</value>
+    /// <summary>Gets or sets the href language of this link.</summary>
+    /// <value>A <see cref="string"/> representing the href language of this link.</value>
     public virtual string HrefLanguage
     {
       get { return (string)this.Element.Attribute("hreflang"); }
       set { this.Element.SetAttributeValue("hreflang", value); }
     }
 
-    /// <summary>Gets or sets the title of the link.</summary>
-    /// <value>A <see cref="string"/> representing the title of the link.</value>
+    /// <summary>Gets or sets the title of this link.</summary>
+    /// <value>A <see cref="string"/> representing the title of this link.</value>
     public virtual string Title
     {
       get { return (string)this.Element.Attribute("title"); }
       set { this.Element.SetAttributeValue("title", value); }
     }
 
-    /// <summary>Gets or sets the length of the content represented by the link.</summary>
-    /// <value>A <see cref="string"/> representing the length of the content represented by the link.</value>
+    /// <summary>Gets or sets the length of the content represented by this link.</summary>
+    /// <value>A <see cref="string"/> representing the length of the content represented by this link.</value>
     public virtual string Length
     {
       get { return (string)this.Element.Attribute("length"); }
@@ -99,8 +99,8 @@ namespace NerdSince1984.Syndication.Atom
       get { return AtomNamespace + "link"; }
     }
 
-    /// <summary>Returns a <see cref="string"/> representing the href of the link.</summary>
-    /// <returns>A <see cref="string"/> representing the href of the link.</returns>
+    /// <summary>Returns a <see cref="string"/> representing the href of this link.</summary>
+    /// <returns>A <see cref="string"/> representing the href of this link.</returns>
     public override string ToString()
     {
       return this.Href;
