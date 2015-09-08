@@ -5,7 +5,7 @@ using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace NerdSince1984.Syndication.Atom.Publication
+namespace NS84.Syndication.Atom.Publication
 {
   /// <summary>Represents an Atom Publishing Service Document.</summary>
   public class AtomPubService : AtomPubNodeContainerNode

@@ -2,9 +2,9 @@
 using System.IO;
 using System.Xml;
 using System.Xml.Linq;
-using NerdSince1984.Syndication.Atom.Publication;
+using NS84.Syndication.Atom.Publication;
 
-namespace NerdSince1984.Syndication.Atom
+namespace NS84.Syndication.Atom
 {
   /// <summary>Represents an Atom Entry Document or an entry in an Atom Feed Document.</summary>
   public class AtomEntry : AtomEntryNode

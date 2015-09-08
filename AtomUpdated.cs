@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Xml.Linq;
 
-namespace NerdSince1984.Syndication.Atom
+namespace NS84.Syndication.Atom
 {
   /// <summary>Represents the date and time when an Atom feed or entry was last updated.</summary>
   public class AtomUpdated : AtomDateNode

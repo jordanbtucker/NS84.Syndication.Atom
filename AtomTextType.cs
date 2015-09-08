@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NerdSince1984.Syndication.Atom
+namespace NS84.Syndication.Atom
 {
   /// <summary>Specifies the type of text of an <see cref="AtomTextNode"/>.</summary>
   public enum AtomTextType

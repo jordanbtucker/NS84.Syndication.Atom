@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Xml.Linq;
 
-namespace NerdSince1984.Syndication.Atom
+namespace NS84.Syndication.Atom
 {
   /// <summary>Represents information about the generator of an Atom feed or source.</summary>
   [DebuggerDisplay("Text = {Text}, Uri = {Uri}, Version = {Version}")]

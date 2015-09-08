@@ -8,12 +8,12 @@
     <ProjectGuid>{0FA45BB5-9D53-4914-A922-8371785BA19F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NerdSince1984.Syndication.Atom</RootNamespace>
-    <AssemblyName>NerdSince1984.Syndication.Atom</AssemblyName>
+    <RootNamespace>NS84.Syndication.Atom</RootNamespace>
+    <AssemblyName>NS84.Syndication.Atom</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>NerdSince1984.Syndication.Atom.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>NS84.Syndication.Atom.snk</AssemblyOriginatorKeyFile>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -53,7 +53,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\NerdSince1984.Syndication.Atom.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\NS84.Syndication.Atom.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -156,10 +156,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="NerdSince1984.Syndication.Atom.dml">
+    <Content Include="NS84.Syndication.Atom.dml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="NerdSince1984.Syndication.Atom.snk" />
+    <None Include="NS84.Syndication.Atom.snk" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

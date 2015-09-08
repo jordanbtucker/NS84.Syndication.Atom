@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Xml.Linq;
 
-namespace NerdSince1984.Syndication.Atom
+namespace NS84.Syndication.Atom
 {
   /// <summary>An abstract base class that represents the content of an Atom entry.</summary>
   [DebuggerDisplay("Type = {Type}")]

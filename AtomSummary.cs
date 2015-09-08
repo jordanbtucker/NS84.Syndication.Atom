@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Xml.Linq;
 
-namespace NerdSince1984.Syndication.Atom
+namespace NS84.Syndication.Atom
 {
   /// <summary>Represents the summary of an Atom feed or entry.</summary>
   public class AtomSummary : AtomTextNode

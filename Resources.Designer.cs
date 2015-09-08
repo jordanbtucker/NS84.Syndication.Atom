@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NerdSince1984.Syndication.Atom {
+namespace NS84.Syndication.Atom {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace NerdSince1984.Syndication.Atom {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NerdSince1984.Syndication.Atom.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NS84.Syndication.Atom.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace NerdSince1984.Syndication.Atom {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to NerdSince1984.Syndication.Atom.
+        ///   Looks up a localized string similar to NS84.Syndication.Atom.
         /// </summary>
         internal static string AtomGeneratorText {
             get {
@@ -70,7 +70,7 @@ namespace NerdSince1984.Syndication.Atom {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://nerdsince1984.com.
+        ///   Looks up a localized string similar to http://ns84.com.
         /// </summary>
         internal static string AtomGeneratorUri {
             get {
@@ -79,7 +79,7 @@ namespace NerdSince1984.Syndication.Atom {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 3.5.0.
+        ///   Looks up a localized string similar to 0.9.0.
         /// </summary>
         internal static string AtomGeneratorVersion {
             get {

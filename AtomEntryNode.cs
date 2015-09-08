@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Xml.Linq;
 
-namespace NerdSince1984.Syndication.Atom
+namespace NS84.Syndication.Atom
 {
   /// <summary>An abstract base class that represents an Atom node with entry information.</summary>
   [DebuggerDisplay("Id = {Id}, Title = {Title}, Updated = {Updated}")]

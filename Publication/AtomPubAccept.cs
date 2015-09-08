@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Xml.Linq;
 
-namespace NerdSince1984.Syndication.Atom.Publication
+namespace NS84.Syndication.Atom.Publication
 {
   /// <summary>Represents a media type that can be posted to an Atom Publishing Collection.</summary>
   public class AtomPubAccept : AtomPubNode

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
 
-namespace NerdSince1984.Syndication.Atom.Publication
+namespace NS84.Syndication.Atom.Publication
 {
   /// <summary>Represents control information about an Atom entry.</summary>
   public class AtomPubControl : AtomPubExtensionContainerNode

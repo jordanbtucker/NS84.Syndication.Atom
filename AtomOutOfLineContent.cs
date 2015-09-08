@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Xml.Linq;
 
-namespace NerdSince1984.Syndication.Atom
+namespace NS84.Syndication.Atom
 {
   /// <summary>Represents the out-of-line content of an Atom entry.</summary>
   [DebuggerDisplay("Src = {Src}, Type = {Type}")]

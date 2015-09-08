@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NerdSince1984.Syndication.Atom.Publication
+namespace NS84.Syndication.Atom.Publication
 {
   /// <summary>Specifies how whitespace should be handled.</summary>
   public enum AtomPubWhitespace

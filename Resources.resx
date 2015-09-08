@@ -112,19 +112,19 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AtomGeneratorText" xml:space="preserve">
-    <value>NerdSince1984.Syndication.Atom</value>
+    <value>NS84.Syndication.Atom</value>
   </data>
   <data name="AtomGeneratorUri" xml:space="preserve">
-    <value>http://nerdsince1984.com</value>
+    <value>http://ns84.com</value>
   </data>
   <data name="AtomGeneratorVersion" xml:space="preserve">
-    <value>3.5.0</value>
+    <value>0.9.0</value>
   </data>
   <data name="AtomNamespace" xml:space="preserve">
     <value>http://www.w3.org/2005/Atom</value>

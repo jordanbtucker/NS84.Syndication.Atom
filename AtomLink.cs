@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Xml.Linq;
 
-namespace NerdSince1984.Syndication.Atom
+namespace NS84.Syndication.Atom
 {
   /// <summary>Represents a link in an Atom feed or entry.</summary>
   [DebuggerDisplay("Href = {Href}, Rel = {Rel}, Type = {Type}")]

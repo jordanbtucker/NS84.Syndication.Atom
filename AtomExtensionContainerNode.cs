@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
 
-namespace NerdSince1984.Syndication.Atom
+namespace NS84.Syndication.Atom
 {
   /// <summary>An abstract base class that represents an Atom node that can contain Atom extension nodes.</summary>
   public abstract class AtomExtensionContainerNode : AtomNode

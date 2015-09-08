@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Xml.Linq;
 
-namespace NerdSince1984.Syndication.Atom.Publication
+namespace NS84.Syndication.Atom.Publication
 {
   /// <summary>Represents a location to an Atom Publishing Category Document.</summary>
   [DebuggerDisplay("Href = {Href}")]

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Xml.Linq;
 
-namespace NerdSince1984.Syndication.Atom
+namespace NS84.Syndication.Atom
 {
   /// <summary>An abstract base class that represents an Atom node that can contain other nodes.</summary>
   public abstract class AtomNodeContainerNode : AtomExtensionContainerNode

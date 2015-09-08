@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Xml.Linq;
 
-namespace NerdSince1984.Syndication.Atom
+namespace NS84.Syndication.Atom
 {
   /// <summary>An abstract base class that represents a person based Atom node.</summary>
   [DebuggerDisplay("Name = {Name}, Email = {Email}, Uri = {Uri}")]

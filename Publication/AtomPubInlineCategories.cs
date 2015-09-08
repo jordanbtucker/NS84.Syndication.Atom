@@ -5,7 +5,7 @@ using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace NerdSince1984.Syndication.Atom.Publication
+namespace NS84.Syndication.Atom.Publication
 {
   /// <summary>Represents an Atom Publishing Category Document or the categories that can be applied to the members of an Atom Publishing Collection.</summary>
   public class AtomPubInlineCategories : AtomPubCategories

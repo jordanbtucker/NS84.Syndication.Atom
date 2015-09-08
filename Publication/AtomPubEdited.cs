@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Xml.Linq;
 
-namespace NerdSince1984.Syndication.Atom.Publication
+namespace NS84.Syndication.Atom.Publication
 {
   /// <summary>Represents the date and time when an Atom feed or entry was last edited.</summary>
   public class AtomPubEdited : AtomPubNode

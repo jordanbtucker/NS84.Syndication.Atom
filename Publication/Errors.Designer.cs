@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace NerdSince1984.Syndication.Atom.Publication {
+namespace NS84.Syndication.Atom.Publication {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace NerdSince1984.Syndication.Atom.Publication {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NerdSince1984.Syndication.Atom.Publication.Errors", typeof(Errors).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NS84.Syndication.Atom.Publication.Errors", typeof(Errors).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

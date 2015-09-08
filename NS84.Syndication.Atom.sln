@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdSince1984.Syndication.Atom", "NerdSince1984.Syndication.Atom.csproj", "{0FA45BB5-9D53-4914-A922-8371785BA19F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NS84.Syndication.Atom", "NS84.Syndication.Atom.csproj", "{0FA45BB5-9D53-4914-A922-8371785BA19F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

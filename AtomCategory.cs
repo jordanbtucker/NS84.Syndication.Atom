@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Xml.Linq;
 
-namespace NerdSince1984.Syndication.Atom
+namespace NS84.Syndication.Atom
 {
   /// <summary>Represents a category of an Atom feed or entry.</summary>
   [DebuggerDisplay("Term = {Term}, Label = {Label}, Scheme = {Scheme}")]
