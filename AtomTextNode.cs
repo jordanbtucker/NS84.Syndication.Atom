@@ -123,7 +123,7 @@ namespace NerdSince1984.Syndication.Atom
     /// <summary>Converts an <see cref="AtomTextNode"/> to a <see cref="string"/>.</summary>
     /// <param name="node">An <see cref="AtomTextNode"/> to convert to a <see cref="string"/>.</param>
     /// <returns>A <see cref="string"/> converted from the specified <see cref="AtomTextNode"/>.</returns>
-    public static implicit operator string (AtomTextNode node)
+    public static implicit operator string(AtomTextNode node)
     {
       return node == null ? null : node.Text;
     }
