@@ -26,6 +26,11 @@ namespace NerdSince1984.Syndication.Atom.Publication
       }
     }
 
+    public AtomPubInlineCategories Load()
+    {
+      return AtomPubCategories.Load(this.Href);
+    }
+
     public static implicit operator AtomPubOutOfLineCategories(XElement element)
     {
       return element == null ? null : new AtomPubOutOfLineCategories(element);
