@@ -32,7 +32,7 @@ namespace NerdSince1984.Syndication.Atom
     protected AtomFeed(XElement element) : base(element) { }
 
     /// <summary>Loads an <see cref="AtomFeed"/> from a file.</summary>
-    /// <param name="uri">A <see cref="string"/> representing the URI of the file to load the feed from.</param>
+    /// <param name="uri">A <see cref="string"/> representing the URI of the file to load the document from.</param>
     /// <returns>An <see cref="AtomFeed"/> loaded from the specified file.</returns>
     public static AtomFeed Load(string uri)
     {
@@ -40,7 +40,7 @@ namespace NerdSince1984.Syndication.Atom
     }
 
     /// <summary>Loads an <see cref="AtomFeed"/> from a <see cref="Stream"/>.</summary>
-    /// <param name="stream">A <see cref="Stream"/> to load the feed from.</param>
+    /// <param name="stream">A <see cref="Stream"/> to load the document from.</param>
     /// <returns>An <see cref="AtomFeed"/> loaded from the specified <see cref="Stream"/>.</returns>
     public static AtomFeed Load(Stream stream)
     {
@@ -48,7 +48,7 @@ namespace NerdSince1984.Syndication.Atom
     }
 
     /// <summary>Loads an <see cref="AtomFeed"/> from a <see cref="TextReader"/>.</summary>
-    /// <param name="reader">A <see cref="TextReader"/> to load the feed from.</param>
+    /// <param name="reader">A <see cref="TextReader"/> to load the document from.</param>
     /// <returns>An <see cref="AtomFeed"/> loaded from the specified <see cref="TextReader"/>.</returns>
     public static AtomFeed Load(TextReader reader)
     {
@@ -56,7 +56,7 @@ namespace NerdSince1984.Syndication.Atom
     }
 
     /// <summary>Loads an <see cref="AtomFeed"/> from an <see cref="XmlReader"/>.</summary>
-    /// <param name="reader">An <see cref="XmlReader"/> to load the feed from.</param>
+    /// <param name="reader">An <see cref="XmlReader"/> to load the document from.</param>
     /// <returns>An <see cref="AtomFeed"/> loaded from the specified <see cref="XmlReader"/>.</returns>
     public static AtomFeed Load(XmlReader reader)
     {
@@ -64,36 +64,36 @@ namespace NerdSince1984.Syndication.Atom
     }
 
     /// <summary>Loads an <see cref="AtomFeed"/> from XML.</summary>
-    /// <param name="xml">A <see cref="string"/> representing XML to load the feed from.</param>
+    /// <param name="xml">A <see cref="string"/> representing XML to load the document from.</param>
     /// <returns>An <see cref="AtomFeed"/> loaded from the specified XML.</returns>
     public static AtomFeed LoadXml(string xml)
     {
       return (AtomFeed)XElement.Parse(xml);
     }
 
-    /// <summary>Saves this feed to a file.</summary>
-    /// <param name="path">A <see cref="string"/> representing the path of the file to save this feed to.</param>
+    /// <summary>Saves this document to a file.</summary>
+    /// <param name="path">A <see cref="string"/> representing the path of the file to save this document to.</param>
     public void Save(string path)
     {
       ((XElement)this).Save(path);
     }
 
-    /// <summary>Saves this feed to a <see cref="Stream"/>.</summary>
-    /// <param name="stream">A <see cref="Stream"/> to save this feed to.</param>
+    /// <summary>Saves this document to a <see cref="Stream"/>.</summary>
+    /// <param name="stream">A <see cref="Stream"/> to save this document to.</param>
     public void Save(Stream stream)
     {
       this.Save(new StreamWriter(stream));
     }
 
-    /// <summary>Saves this feed to a <see cref="TextWriter"/>.</summary>
-    /// <param name="writer">A <see cref="TextWriter"/> to save this feed to.</param>
+    /// <summary>Saves this document to a <see cref="TextWriter"/>.</summary>
+    /// <param name="writer">A <see cref="TextWriter"/> to save this document to.</param>
     public void Save(TextWriter writer)
     {
       ((XElement)this).Save(writer);
     }
 
-    /// <summary>Saves this feed to an <see cref="XmlWriter"/>.</summary>
-    /// <param name="writer">An <see cref="XmlWriter"/> to save this feed to.</param>
+    /// <summary>Saves this document to an <see cref="XmlWriter"/>.</summary>
+    /// <param name="writer">An <see cref="XmlWriter"/> to save this document to.</param>
     public void Save(XmlWriter writer)
     {
       ((XElement)this).Save(writer);

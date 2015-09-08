@@ -27,7 +27,7 @@ namespace NerdSince1984.Syndication.Atom
     protected AtomEntry(XElement element) : base(element) { }
 
     /// <summary>Loads an <see cref="AtomEntry"/> from a file.</summary>
-    /// <param name="uri">A <see cref="string"/> representing the URI of the file to load the entry from.</param>
+    /// <param name="uri">A <see cref="string"/> representing the URI of the file to load the document from.</param>
     /// <returns>An <see cref="AtomEntry"/> loaded from the specified file.</returns>
     public static AtomEntry Load(string uri)
     {
@@ -35,7 +35,7 @@ namespace NerdSince1984.Syndication.Atom
     }
 
     /// <summary>Loads an <see cref="AtomEntry"/> from a <see cref="Stream"/>.</summary>
-    /// <param name="stream">A <see cref="Stream"/> to load the entry from.</param>
+    /// <param name="stream">A <see cref="Stream"/> to load the document from.</param>
     /// <returns>An <see cref="AtomEntry"/> loaded from the specified <see cref="Stream"/>.</returns>
     public static AtomEntry Load(Stream stream)
     {
@@ -43,7 +43,7 @@ namespace NerdSince1984.Syndication.Atom
     }
 
     /// <summary>Loads an <see cref="AtomEntry"/> from a <see cref="TextReader"/>.</summary>
-    /// <param name="reader">A <see cref="TextReader"/> to load the entry from.</param>
+    /// <param name="reader">A <see cref="TextReader"/> to load the document from.</param>
     /// <returns>An <see cref="AtomEntry"/> loaded from the specified <see cref="TextReader"/>.</returns>
     public static AtomEntry Load(TextReader reader)
     {
@@ -51,7 +51,7 @@ namespace NerdSince1984.Syndication.Atom
     }
 
     /// <summary>Loads an <see cref="AtomEntry"/> from an <see cref="XmlReader"/>.</summary>
-    /// <param name="reader">An <see cref="XmlReader"/> to load the entry from.</param>
+    /// <param name="reader">An <see cref="XmlReader"/> to load the document from.</param>
     /// <returns>An <see cref="AtomEntry"/> loaded from the specified <see cref="XmlReader"/>.</returns>
     public static AtomEntry Load(XmlReader reader)
     {
@@ -59,36 +59,36 @@ namespace NerdSince1984.Syndication.Atom
     }
 
     /// <summary>Loads an <see cref="AtomEntry"/> from XML.</summary>
-    /// <param name="xml">A <see cref="string"/> representing XML to load the entry from.</param>
+    /// <param name="xml">A <see cref="string"/> representing XML to load the document from.</param>
     /// <returns>An <see cref="AtomEntry"/> loaded from the specified XML.</returns>
     public static AtomEntry LoadXml(string xml)
     {
       return (AtomEntry)XElement.Parse(xml);
     }
 
-    /// <summary>Saves this entry to a file.</summary>
-    /// <param name="path">A <see cref="string"/> representing the path of the file to save this entry to.</param>
+    /// <summary>Saves this document to a file.</summary>
+    /// <param name="path">A <see cref="string"/> representing the path of the file to save this document to.</param>
     public virtual void Save(string path)
     {
       ((XElement)this).Save(path);
     }
 
-    /// <summary>Saves this entry to a <see cref="Stream"/>.</summary>
-    /// <param name="stream">A <see cref="Stream"/> to save this entry to.</param>
+    /// <summary>Saves this document to a <see cref="Stream"/>.</summary>
+    /// <param name="stream">A <see cref="Stream"/> to save this document to.</param>
     public virtual void Save(Stream stream)
     {
       this.Save(new StreamWriter(stream));
     }
 
-    /// <summary>Saves this entry to a <see cref="TextWriter"/>.</summary>
-    /// <param name="writer">A <see cref="TextWriter"/> to save this entry to.</param>
+    /// <summary>Saves this document to a <see cref="TextWriter"/>.</summary>
+    /// <param name="writer">A <see cref="TextWriter"/> to save this document to.</param>
     public virtual void Save(TextWriter writer)
     {
       ((XElement)this).Save(writer);
     }
 
-    /// <summary>Saves this entry to an <see cref="XmlWriter"/>.</summary>
-    /// <param name="writer">An <see cref="XmlWriter"/> to save this entry to.</param>
+    /// <summary>Saves this document to an <see cref="XmlWriter"/>.</summary>
+    /// <param name="writer">An <see cref="XmlWriter"/> to save this document to.</param>
     public virtual void Save(XmlWriter writer)
     {
       ((XElement)this).Save(writer);
