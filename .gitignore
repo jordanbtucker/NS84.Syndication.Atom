@@ -1,6 +1,5 @@
 .vs/
 bin/
 obj/
-NerdSince1984.Syndication.Atom.csproj.user
-NerdSince1984.Syndication.Atom.dml
-NerdSince1984.Syndication.Atom.snk
+*.csproj.user
+*.snk
