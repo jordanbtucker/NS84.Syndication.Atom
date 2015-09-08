@@ -20,7 +20,7 @@ namespace NerdSince1984.Syndication.Atom
     /// <param name="element">An <see cref="XElement"/> to create the source from.</param>
     protected AtomSource(XElement element) : base(element) { }
 
-    /// <summary>Gets the generator of this source.</summary>
+    /// <summary>Gets or sets the generator of this source.</summary>
     /// <value>An <see cref="AtomGenerator"/> representing information about the generator of this source.</value>
     public virtual AtomGenerator Generator
     {

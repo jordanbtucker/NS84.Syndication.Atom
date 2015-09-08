@@ -88,7 +88,7 @@ namespace NerdSince1984.Syndication.Atom
       get { return this.Element.Elements(AtomNamespace + "link").Select(e => (AtomLink)e); }
     }
 
-    /// <summary>Gets a value indicating whether the specified <see cref="AtomNode"/> can be added.</summary>
+    /// <summary>Returns a value indicating whether the specified <see cref="AtomNode"/> can be added.</summary>
     /// <param name="node">The <see cref="AtomNode"/> to test.</param>
     /// <returns>True if the specified <see cref="AtomNode"/> can be added; otherwise, false.</returns>
     protected override bool CanAddNode(AtomNode node)
@@ -96,7 +96,7 @@ namespace NerdSince1984.Syndication.Atom
       return node is AtomAuthor || node is AtomCategory || node is AtomContributor || node is AtomLink;
     }
 
-    /// <summary>Gets a value indicating whether the specified <see cref="AtomNode"/> can be removed.</summary>
+    /// <summary>Returns a value indicating whether the specified <see cref="AtomNode"/> can be removed.</summary>
     /// <param name="node">The <see cref="AtomNode"/> to test.</param>
     /// <returns>True if the specified <see cref="AtomNode"/> can be removed; otherwise, false.</returns>
     protected override bool CanRemoveNode(AtomNode node)

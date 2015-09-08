@@ -22,7 +22,7 @@ namespace NerdSince1984.Syndication.Atom
     /// <param name="element">An <see cref="XElement"/> to create the node from.</param>
     protected AtomTextNode(XElement element) : base(element) { }
 
-    /// <summary>Gets or sets a <see cref="string"/> representing the text of this node.</summary>
+    /// <summary>Gets or sets the text of this node.</summary>
     /// <value>A <see cref="string"/> representing the text of this node.</value>
     /// <exception cref="ArgumentNullException"><paramref name="value"/> is null.</exception>
     /// <exception cref="ArgumentException"><paramref name="value"/> is an empty <see cref="string"/>.</exception>
@@ -46,7 +46,7 @@ namespace NerdSince1984.Syndication.Atom
       }
     }
 
-    /// <summary>Gets an <see cref="AtomTextType"/> representing the type of text of this node.</summary>
+    /// <summary>Gets the type of text of this node.</summary>
     /// <value>An <see cref="AtomTextType"/> representing the type of text of this node.</value>
     public AtomTextType Type
     {

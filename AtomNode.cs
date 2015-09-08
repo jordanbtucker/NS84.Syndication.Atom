@@ -42,7 +42,7 @@ namespace NerdSince1984.Syndication.Atom
     /// <value>An <see cref="XName"/> representing the name of the underlying element.</value>
     protected abstract XName ElementName { get; }
 
-    /// <summary>Gets the base URI of this node.</summary>
+    /// <summary>Gets or sets the base URI of this node.</summary>
     /// <value>A <see cref="string"/> representing the base URI of this node.</value>
     public string BaseUri
     {
@@ -50,7 +50,7 @@ namespace NerdSince1984.Syndication.Atom
       set { this.Element.SetAttributeValue(XNamespace.Xml + "base", value); }
     }
 
-    /// <summary>Gets the language of this node.</summary>
+    /// <summary>Gets or sets the language of this node.</summary>
     /// <value>A <see cref="string"/> representing the language of this node.</value>
     public string Language
     {
@@ -104,7 +104,7 @@ namespace NerdSince1984.Syndication.Atom
         extAttribute.Remove();
     }
 
-    /// <summary>Gets a value indicating whether the specified <see cref="object"/> is equal to this node.</summary>
+    /// <summary>Returns a value indicating whether the specified <see cref="object"/> is equal to this node.</summary>
     /// <param name="obj">The <see cref="object"/> to test.</param>
     /// <returns>True if <paramref name="obj"/> is equal to this node; otherwise, false.</returns>
     /// <remarks>This method first tests whether <paramref name="obj"/> and this node reference the same <see cref="AtomNode"/>, and if so returns true. If not, it tests whether the underlying elements of <paramref name="obj"/> and this node reference the same <see cref="XElement"/>.</remarks>
@@ -136,7 +136,7 @@ namespace NerdSince1984.Syndication.Atom
       return this.Element.ToString();
     }
 
-    /// <summary>Gets a value indicating whether two instances of <see cref="AtomNode"/> are equal.</summary>
+    /// <summary>Returns a value indicating whether two instances of <see cref="AtomNode"/> are equal.</summary>
     /// <param name="a">The first <see cref="AtomNode"/> to test.</param>
     /// <param name="b">The second <see cref="AtomNode"/> to test.</param>
     /// <returns>True if <paramref name="a"/> is equal to <paramref name="b"/>; otherwise, false.</returns>
@@ -148,7 +148,7 @@ namespace NerdSince1984.Syndication.Atom
       return a.Element == b.Element;
     }
 
-    /// <summary>Gets a value indicating whether two instances of <see cref="AtomNode"/> are not equal.</summary>
+    /// <summary>Returns a value indicating whether two instances of <see cref="AtomNode"/> are not equal.</summary>
     /// <param name="a">The first <see cref="AtomNode"/> to test.</param>
     /// <param name="b">The second <see cref="AtomNode"/> to test.</param>
     /// <returns>True if <paramref name="a"/> is not equal to <paramref name="b"/>; otherwise, false.</returns>
