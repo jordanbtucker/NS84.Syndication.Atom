@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+  <assembly>
+    <name>NerdSince1984.Syndication.Atom</name>
+  </assembly>
+  <members>
+    <member name="T:NerdSince1984.Syndication.Atom.AtomFeed">
+      <remarks>
+        <para>
+          Atom is an XML-based document format that describes lists of related information known as "feeds".
+          Feeds are composed of a number of items, known as "entries", each with an extensible set of attached
+          metadata. For example, each entry has a title. The primary use case that Atom addresses is the syndication of
+          Web content such as weblogs and news headlines to Web sites as well as directly to user agents.
+        </para>
+        <para>
+          An Atom Feed Document is a representation of an Atom feed, including metadata about the feed, and some or all
+          of the entries associated with it. Its root is the atom:feed element represented by <see
+            cref="T:NerdSince1984.Syndication.Atom.AtomFeed"/>. The "atom:feed" element is the document (i.e.,
+          top-level) element of an Atom Feed Document, acting as a container for metadata and data associated with the
+          feed. Its element children consist of metadata elements followed by zero or more atom:entry child elements
+          represented by <see cref="T:NerdSince1984.Syndication.Atom.AtomEntry"/>.
+        </para>
+      </remarks>
+      <example>
+        <para>The following example demonstrates how to create a brief, single-entry Atom Feed Document.</para>
+        <code lang="cs">
+          <![CDATA[
+AtomFeed feed = new AtomFeed("urn:uuid:60a76c80-d399-11d9-b93C-0003939e0af6",
+                             "Example Feed",
+                             new DateTime(2003, 12, 13, 18, 30, 2, DateTimeKind.Utc));
+feed.Add(new AtomLink("http://example.org/"));
+feed.Add(new AtomAuthor("John Doe"));
+
+AtomEntry entry = new AtomEntry("urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a",
+                                "Atom-Powered Robots Run Amok",
+                                new DateTime(2003, 12, 13, 18, 30, 2, DateTimeKind.Utc));
+entry.Add(new AtomLink("http://example.org/2003/12/13/atom03"));
+entry.Summary = "Some text.";
+feed.Add(entry);
+
+feed.Save("feed.xml");]]>
+        </code>
+        <code lang="vbnet">
+          <![CDATA[
+Dim feed As AtomFeed = New AtomFeed("urn:uuid:60a76c80-d399-11d9-b93C-0003939e0af6", _
+                                    "Example Feed", _
+                                    New DateTime(2003, 12, 13, 18, 30, 2, DateTimeKind.Utc))
+feed.Add(New AtomLink("http://example.org/"))
+feed.Add(New AtomAuthor("John Doe"))
+
+Dim entry As AtomEntry = New AtomEntry("urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a", _
+                                       "Atom-Powered Robots Run Amok", _
+                                       New DateTime(2003, 12, 13, 18, 30, 2, DateTimeKind.Utc))
+entry.Add(New AtomLink("http://example.org/2003/12/13/atom03"))
+entry.Summary = "Some text."
+feed.Add(entry)
+
+feed.Save("feed.xml")]]>
+        </code>
+        <code lang="xml" title="feed.xml (formatted for display)">
+          <![CDATA[
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>urn:uuid:60a76c80-d399-11d9-b93C-0003939e0af6</id>
+  <title>Example Feed</title>
+  <updated>2003-12-13T18:30:02Z</updated>
+  <generator uri="http://nerdsince1984.com" version="1.0">
+    NerdSince1984.Syndication.Atom</generator>
+  <link href="http://example.org/" />
+  <author>
+    <name>John Doe</name>
+  </author>
+  <entry>
+    <id>urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a</id>
+    <title>Atom-Powered Robots Run Amok</title>
+    <updated>2003-12-13T18:30:02Z</updated>
+    <link href="http://example.org/2003/12/13/atom03" />
+    <summary>Some text.</summary>
+  </entry>
+</feed>]]>
+        </code>
+      </example>
+    </member>
+    <member name="M:NerdSince1984.Syndication.Atom.AtomFeed.#ctor(NerdSince1984.Syndication.Atom.AtomId,NerdSince1984.Syndication.Atom.AtomTitle,NerdSince1984.Syndication.Atom.AtomUpdated)">
+      <remarks>
+        <para>
+          According to the Atom standard, an atom:feed element requires one child atom:id element and one atom:title
+          element, represented by <see cref="T:NerdSince1984.Syndication.Atom.AtomId"/> and <see
+          cref="T:NerdSince1984.Syndication.Atom.AtomTitle"/> respectively. These types can be implicitly converted, or
+          coerced, from a <see cref="T:System.String"/>. An atom:feed element also requires one child atom:updated
+          element, represented by <see cref="T:NerdSince1984.Syndication.Atom.AtomUpdated"/>, which can be coerced from
+          a <see cref="T:System.DateTime"/>. This makes it possible to construct an <see
+          cref="T:NerdSince1984.Syndication.Atom.AtomFeed"/> using two <see cref="T:System.String"/> instances and a
+          <see cref="T:System.DateTime"/> instead of constructing an <see
+          cref="T:NerdSince1984.Syndication.Atom.AtomId"/>, an <see
+            cref="T:NerdSince1984.Syndication.Atom.AtomTitle"/>, and an <see
+              cref="T:NerdSince1984.Syndication.Atom.AtomUpdated"/>.
+        </para>
+      </remarks>
+      <example>
+        <para>The following example demonstrates the benefits of using type coercion.</para>
+        <code lang="cs">
+          <![CDATA[
+// The following code
+AtomFeed feed1 = new AtomFeed("http://example.org/feed",
+                              "Example Feed",
+                              DateTime.UtcNow);
+
+// is equivalent to
+AtomFeed feed2 = new AtomFeed(new AtomId("http://example.org/feed"),
+                              new AtomTitle("Example Feed"),
+                              new AtomUpdated(DateTime.UtcNow));]]>
+        </code>
+        <code lang="vbnet">
+          <![CDATA[
+' The following code
+Dim feed1 As AtomFeed = New AtomFeed("http://example.org/feed", _
+                                     "Example Feed", _
+                                     DateTime.UtcNow)
+
+' is equivalent to
+Dim feed2 As AtomFeed = New AtomFeed(New AtomId("http://example.org/feed"), _
+                                     New AtomTitle("Example Feed"), _
+                                     New AtomUpdated(DateTime.UtcNow))]]>
+        </code>
+      </example>
+    </member>
+    <member name="T:NerdSince1984.Syndication.Atom.AtomEntry">
+      <remarks>
+        <para>
+          The "atom:entry" element represents an individual entry, acting as a container for metadata and data
+          associated with the entry.  This element can appear as a child of the atom:feed element, or it can appear as
+          the document (i.e., top-level) element of a stand-alone Atom Entry Document.
+        </para>
+      </remarks>
+      <example>
+        <para>The following example demonstrates how to create an Atom Entry Document.</para>
+        <code lang="cs">
+          <![CDATA[
+AtomEntry entry = new AtomEntry(
+  "urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a",
+  "Atom-Powered Robots Run Amok",
+  new DateTime(2003, 12, 13, 18, 30, 2, DateTimeKind.Utc));
+entry.Add(new AtomLink("http://example.org/2003/12/13/atom03"));
+entry.Summary = "Some text.";
+
+entry.Save("entry.xml");]]>
+        </code>
+        <code lang="vbnet">
+          <![CDATA[
+Dim entry As AtomEntry = New AtomEntry( _
+  "urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a", _
+  "Atom-Powered Robots Run Amok", _
+  New DateTime(2003, 12, 13, 18, 30, 2, DateTimeKind.Utc))
+entry.Add(New AtomLink("http://example.org/2003/12/13/atom03"))
+entry.Summary = "Some text."
+
+entry.Save("entry.xml")]]>
+        </code>
+        <code lang="xml" title="entry.xml">
+          <![CDATA[
+<?xml version="1.0" encoding="utf-8"?>
+<entry>
+  <id>urn:uuid:1225c695-cfb8-4ebb-aaaa-80da344efa6a</id>
+  <title>Atom-Powered Robots Run Amok</title>
+  <updated>2003-12-13T18:30:02Z</updated>
+  <link href="http://example.org/2003/12/13/atom03" />
+  <summary>Some text.</summary>
+</entry>]]>
+        </code>
+      </example>
+    </member>
+    <member name="M:NerdSince1984.Syndication.Atom.AtomEntry.#ctor(NerdSince1984.Syndication.Atom.AtomId,NerdSince1984.Syndication.Atom.AtomTitle,NerdSince1984.Syndication.Atom.AtomUpdated)">
+      <remarks>
+        <para>
+          According to the Atom standard, an atom:entry element requires one child atom:id element and one atom:title
+          element, represented by <see cref="T:NerdSince1984.Syndication.Atom.AtomId"/> and <see
+          cref="T:NerdSince1984.Syndication.Atom.AtomTitle"/> respectively. These types can be implicitly converted, or
+          coerced, from a <see cref="T:System.String"/>. An atom:entry element also requires one child atom:updated
+          element, represented by <see cref="T:NerdSince1984.Syndication.Atom.AtomUpdated"/>, which can be coerced from
+          a <see cref="T:System.DateTime"/>. This makes it possible to construct an <see
+          cref="T:NerdSince1984.Syndication.Atom.AtomEntry"/> using two <see cref="T:System.String"/> instances and a
+          <see cref="T:System.DateTime"/> instead of constructing an <see
+          cref="T:NerdSince1984.Syndication.Atom.AtomId"/>, an <see
+            cref="T:NerdSince1984.Syndication.Atom.AtomTitle"/>, and an <see
+              cref="T:NerdSince1984.Syndication.Atom.AtomUpdated"/>.
+        </para>
+      </remarks>
+      <example>
+        <para>The following example demonstrates the benefits of using type coercion.</para>
+        <code lang="cs">
+          <![CDATA[
+// The following code
+AtomEntry entry1 = new AtomEntry("http://example.org/entry",
+                                 "Example Entry",
+                                 DateTime.UtcNow);
+
+// is equivalent to
+AtomEntry entry2 = new AtomEntry(new AtomId("http://example.org/entry"),
+                                 new AtomTitle("Example Entry"),
+                                 new AtomUpdated(DateTime.UtcNow));]]>
+        </code>
+        <code lang="vbnet">
+          <![CDATA[
+' The following code
+Dim entry1 As AtomEntry = New AtomEntry("http://example.org/entry", _
+                                        "Example Entry", _
+                                        DateTime.UtcNow)
+
+' is equivalent to
+Dim entry2 As AtomEntry = New AtomEntry(New AtomId("http://example.org/entry"), _
+                                        New AtomTitle("Example Entry"), _
+                                        New AtomUpdated(DateTime.UtcNow))]]>
+        </code>
+      </example>
+    </member>
+    <member name="T:NerdSince1984.Syndication.Atom.AtomContent">
+      <remarks>
+        <para>
+          The "atom:content" element either contains or links to the content of the entry. For documentation on
+          managing contained content, see <see cref="T:NerdSince1984.Syndication.Atom.AtomInlineContent"/>. For
+          documentation on managing linked content, see <see
+            cref="T:NerdSince1984.Syndication.Atom.AtomOutOfLineContent"/>.
+        </para>
+      </remarks>
+    </member>
+    <member name="T:NerdSince1984.Syndication.Atom.AtomInlineContent">
+      <remarks>
+        <para>
+          The "atom:content" element either contains or links to the content of the entry. <see
+            cref="T:NerdSince1984.Syndication.Atom.AtomInlineContent"/> represents an atom:content element that
+          contains the content of the entry. For documentation on managing linked content, see <see
+            cref="T:NerdSince1984.Syndication.Atom.AtomOutOfLineContent"/>.
+        </para>
+      </remarks>
+      <example>
+        <para>The following examples demonstrate how to create different types of inline content.</para>
+        <code lang="cs">
+          <![CDATA[
+AtomInlineContent text = new AtomInlineContent(
+  "This content is represented by plain text.", "text");
+
+AtomInlineContent html = new AtomInlineContent(
+  "<p>This content is represented by <strong>HTML</strong>.</p>", "html");
+
+XNamespace xhtmlns = "http://www.w3.org/1999/xhtml";
+AtomInlineContent xhtml = new AtomInlineContent(
+  new XElement(xhtmlns + "div",
+    new XElement(xhtmlns + "p",
+      "This content is represented by XHTML.")).ToString(),
+  "xhtml");
+
+AtomInlineContent jpeg = new AtomInlineContent(
+  Convert.ToBase64String(File.ReadAllBytes("rss.jpg"),
+                         Base64FormattingOptions.InsertLineBreaks),
+  "image/jpeg");
+
+Console.WriteLine(text.ToXml());
+Console.WriteLine(html.ToXml());
+Console.WriteLine(xhtml.ToXml());
+Console.WriteLine(jpeg.ToXml());]]>
+        </code>
+        <code lang="vbnet">
+          <![CDATA[
+Dim text As AtomInlineContent = New AtomInlineContent( _
+  "This content is represented by plain text.", "text")
+
+Dim html As AtomInlineContent = New AtomInlineContent( _
+  "<p>This content is represented by <strong>HTML</strong>.</p>", "html")
+
+Dim xhtmlns As XNamespace = "http://www.w3.org/1999/xhtml"
+Dim xhtml As AtomInlineContent = New AtomInlineContent( _
+  New XElement(xhtmlns + "div", _
+    New XElement(xhtmlns + "p", _
+      "This content is represented by XHTML.")).ToString(), _
+  "xhtml")
+
+Dim jpeg As AtomInlineContent = New AtomInlineContent( _
+  Convert.ToBase64String(File.ReadAllBytes("rss.jpg"), _
+    Base64FormattingOptions.InsertLineBreaks), _
+  "image/jpeg")
+
+Console.WriteLine(text.ToXml())
+Console.WriteLine(html.ToXml())
+Console.WriteLine(xhtml.ToXml())
+Console.WriteLine(jpeg.ToXml())]]>
+        </code>
+        <code lang="xml" title="Output (formatted for display)">
+          <![CDATA[
+<content type="text" xmlns="http://www.w3.org/2005/Atom">This content is
+  represented by plain text.</content>
+<content type="html" xmlns="http://www.w3.org/2005/Atom">&lt;p&gt;This content
+  is represented by &lt;strong&gt;HTML&lt;/strong&gt;.&lt;/p&gt;</content>
+<content type="xhtml" xmlns="http://www.w3.org/2005/Atom">
+  <div xmlns="http://www.w3.org/1999/xhtml">
+    <p>This content is represented by XHTML.</p>
+  </div>
+</content>
+<content type="image/jpeg" xmlns="http://www.w3.org/2005/Atom">
+  /9j/4AAQSkZJRgABAgAAZABkAAD/7AARRHVja3kAAQAEAAAAUAAA/+4ADkFkb2JlAGTAAAAAAf/b
+  AIQAAgICAgICAgICAgMCAgIDBAMCAgMEBQQEBAQEBQYFBQUFBQUGBgcHCAcHBgkJCgoJCQwMDAwM
+  DAwMDAwMDAwMDAEDAwMFBAUJBgYJDQsJCw0PDg4ODg8PDAwMDAwPDwwMDAwMDA8MDAwMDAwMDAwM
+  DAwMDAwMDAwMDAwMDAwMDAwM/8AAEQgAEAAQAwERAAIRAQMRAf/EAGwAAQEBAAAAAAAAAAAAAAAA
+  AAUGCAEAAwEAAAAAAAAAAAAAAAAABAUHARAAAQMEAQUBAQAAAAAAAAAAAQIEBhESAwUAITFBEwdh
+  FBEAAgEDBAMBAQAAAAAAAAAAAQIEETEDACFBBRIiMsFS/9oADAMBAAIRAxEAPwDcUEhOnmEd2Erm
+  2nkj528f51PZvr8mFzjxWpQonO1N2S1FaqUE9u3bkVhxMU2O8iUmU+xrlSjBbfSfVBckC1tWzsuw
+  ywZCR4r4gAopiYFSb/L/ADU8Am99DzWOOPl7nXvWLzG6wPUf1xeTswEpypTSi0EVtWmoqmvT9B4i
+  ndZJ6uQmRMnkh9seRbMPwjkfmmPXTsXbYnR0ow9XRrg/oPB01oJjpvmOmUDg2TP6Cw2WIOm99rYt
+  EWe5vnxXgEkBQoU1qQQeH9dMXq1aq5FlLk339Cm1VYV3rvxyCDoOb1+Ttsg9kaMyGn9ee9GU0245
+  4IpqYnP0HQTvT7aAxLVbN49dy3Fs4E1DdKfVgdYaO2xos2J9qlqSkdPPjjeTLjy8LxsCnfL5YxSw
+  Yey32HlUgDbW9d1meBlSXIdQBhKZTW5U+jW3PjQE31//2Q==</content>]]>
+        </code>
+      </example>
+    </member>
+    <member name="T:NerdSince1984.Syndication.Atom.AtomOutOfLineContent">
+      <remarks>
+        <para>
+          The "atom:content" element either contains or links to the content of the entry. <see
+            cref="T:NerdSince1984.Syndication.Atom.AtomOutOfLineContent"/> represents an atom:content element that
+          links to the content of the entry. For documentation on managing contained content, see <see
+            cref="T:NerdSince1984.Syndication.Atom.AtomInlineContent"/>.
+        </para>
+      </remarks>
+      <example>
+        <para>The following examples demonstrate how to create different types of out-of-line content.</para>
+        <code lang="cs">
+          <![CDATA[
+AtomOutOfLineContent text = new AtomOutOfLineContent(
+  "http://example.org/text-content.txt", "text/plain");
+
+AtomOutOfLineContent html = new AtomOutOfLineContent(
+  "http://example.org/html-content.htm", "text/html");
+
+AtomOutOfLineContent xhtml = new AtomOutOfLineContent(
+  "http://example.org/xhtml-content.htm", "application/xhtml+xml");
+
+AtomOutOfLineContent jpeg = new AtomOutOfLineContent(
+  "http://example.org/jpeg-content.jpg", "image/jpeg");
+
+Console.WriteLine(text.ToXml());
+Console.WriteLine(html.ToXml());
+Console.WriteLine(xhtml.ToXml());
+Console.WriteLine(jpeg.ToXml());]]>
+        </code>
+        <code lang="vbnet">
+          <![CDATA[
+Dim text As AtomOutOfLineContent = New AtomOutOfLineContent( _
+  "http://example.org/text-content.txt", "text/plain")
+
+Dim html As AtomOutOfLineContent = New AtomOutOfLineContent( _
+  "http://example.org/html-content.htm", "text/html")
+
+Dim xhtml As AtomOutOfLineContent = New AtomOutOfLineContent( _
+  "http://example.org/xhtml-content.htm", "application/xhtml+xml")
+
+Dim jpeg As AtomOutOfLineContent = New AtomOutOfLineContent( _
+  "http://example.org/jpeg-content.jpg", "image/jpeg")
+
+Console.WriteLine(text.ToXml())
+Console.WriteLine(html.ToXml())
+Console.WriteLine(xhtml.ToXml())
+Console.WriteLine(jpeg.ToXml())]]>
+        </code>
+        <code lang="xml" title="Output (formatted for display)">
+          <![CDATA[
+<content type="text/plain"
+         src="http://example.org/text-content.txt"
+         xmlns="http://www.w3.org/2005/Atom" />
+<content type="text/html"
+         src="http://example.org/html-content.htm"
+         xmlns="http://www.w3.org/2005/Atom" />
+<content type="application/xhtml+xml"
+         src="http://example.org/xhtml-content.htm"
+         xmlns="http://www.w3.org/2005/Atom" />
+<content type="image/jpeg"
+         src="http://example.org/jpeg-content.jpg"
+         xmlns="http://www.w3.org/2005/Atom" />]]>
+        </code>
+      </example>
+    </member>
+  </members>
+</doc>
